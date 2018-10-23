@@ -1,6 +1,5 @@
 
 import greenfoot.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -83,7 +82,27 @@ public class TileEngine {
     }
 
     public Tile getTileAt(int x, int y) {
-        return this.generateMap[y][x];
+        try {
+            return this.generateMap[y][x];
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public int getColumn(int x) {
+        return (int) Math.floor(x / TILE_WIDTH);
+    }
+
+    public int getRow(int y) {
+        return (int) Math.floor(y / TILE_HEIGHT);
+    }
+
+    public int getX(int col) {
+        return col * TILE_WIDTH;
+    }
+
+    public int getY(int row) {
+        return row * TILE_HEIGHT;
     }
 
 }
