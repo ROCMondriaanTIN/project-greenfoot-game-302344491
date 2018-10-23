@@ -29,7 +29,7 @@ public class Camera extends Actor {
         this.maxY = TileEngine.MAP_HEIGHT * TileEngine.TILE_HEIGHT - this.height;
         this.tileEngine = tileEngine;
         this.cameraDrag = 0.9;
-//        this.setImage(new GreenfootImage(1, 1));
+        this.setImage(new GreenfootImage(1, 1));
     }
 
     public Camera(TileEngine tileEngine, int speed) {
@@ -59,56 +59,27 @@ public class Camera extends Actor {
         if (follow) {
             this.followActor.screenX = this.width / 2;
             this.followActor.screenY = this.height / 2;
-
-//            dirX = x - followActor.getX();
-//            dirY = y - followActor.getY();
-//            if(dirX >= 1){
-//                dirX = 1;
-//            }else if(dirX <= -1) {
-//                dirX = -1;
-//            }
-//            if(dirY >= 1){
-//                dirY = 1;
-//            }else if(dirY <= -1) {
-//                dirY = -1;
-//            }
-//            this.move(dirX, dirY);
+            
             x = this.followActor.getX() - this.width / 2;
             y = this.followActor.getY() - this.height / 2;
             
-            System.out.print("FollowX: " + this.followActor.getX());
-            System.out.print(" FollowY: " + this.followActor.getY());
-            System.out.print(" Width: " + this.width);
-            System.out.println(" Height: " + this.height);
-            System.out.println(" maxX: " + this.maxX);
-            System.out.println(" maxY: " + this.maxY);
             x = Math.max(0, Math.min(x, this.maxX));
             y = Math.max(0, Math.min(y, this.maxY));
-            
-            System.out.print("x: " + x);
-            System.out.println(" y: " + y);
-            
+                        
             this.setLocation(x, y);
 
+//          left and right sides
             if (this.followActor.getX() < this.width / 2
                     || this.followActor.getX() > this.maxX + this.width / 2) {
                 
-                System.out.println("Hero X: " + this.followActor.getX());
-                System.out.println("Camera X: " + this.getX());
-                this.followActor.screenX = this.followActor.getX() - this.getX();
-                
+                this.followActor.screenX = this.followActor.getX() - this.getX();    
             }
-//             top and bottom sides
+            
+//          top and bottom sides
             if (this.followActor.getY() < this.height / 2
                     || this.followActor.getY() > this.maxY + this.height / 2) {
-                System.out.println("Hero Y: " + this.followActor.getY());
-                System.out.println("Camera Y: " + this.getY());
                 this.followActor.screenY = this.followActor.getY() - this.getY();
             }
-            
-            System.out.print("ScreenX: " + this.followActor.screenX);
-            System.out.println(" ScreenY: " + this.followActor.screenY);
-            
         } else {
             if (Greenfoot.isKeyDown("UP")) {
                 dirY = -1;
@@ -146,9 +117,6 @@ public class Camera extends Actor {
         int endRow = startRow + (this.width / TileEngine.TILE_WIDTH);
         int offsetX = -this.getX() + startCol * TileEngine.TILE_WIDTH;
         int offsetY = -this.getY() + startRow * TileEngine.TILE_HEIGHT;
-
-        System.out.print("Offset X: " + offsetX );
-        System.out.println(" dOffset Y: " + offsetY );
         
         Tile currentTile = null;
         int x = 0;
@@ -166,11 +134,9 @@ public class Camera extends Actor {
             }
         }
 
-        if (this.follow) {
-            int xPos = this.followActor.screenX;// - this.followActor.getImage().getWidth() / 2;
-            int yPos = this.followActor.screenY;// - this.followActor.getImage().getHeight() / 2;
-//            this.followActor.setLocation(xPos, yPos);
-            this.followActor.setLocation(xPos, yPos);
+        if (!this.follow) {
+            this.followActor.screenX = this.followActor.getX() - this.getX();
+            this.followActor.screenY = this.followActor.getY() - this.getY();
         }
     }
 }

@@ -15,20 +15,17 @@ public class Hero extends ActorCamera {
 
     public Hero() {
         super();
-        setImage("man.png");
+        setImage("p1.png");
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        System.out.println(getWidth());
-        System.out.println(getHeight());
     }
 
     @Override
     public void act() {
         double x = (double) this.getX();
         double y = (double) this.getY();
-        System.out.println("Hero::");
-        System.out.println("X: " + this.getX() + " Y: " + getY());
+        
 //        velY += acc;
 //        if (velY > gravity) {
 //            velY = gravity;
@@ -39,6 +36,7 @@ public class Hero extends ActorCamera {
         velY *= drag;
         y += velY;
         x += velX;
+
         this.setLocation((int) (x + 0.5), (int) (y + 0.5));
 //        if (isColliding()) {
 //            for(Actor tile : getIntersectingObjects(Tile.class)) {

@@ -58,11 +58,11 @@ public class TileEngine {
             for (int x = 0; x < MAP_WIDTH; x++) {
                 // Nummer ophalen in de int array
                 int mapIcon = this.map[y][x];
-                if (mapIcon == 0) {
+                if (mapIcon == -1) {
                     continue;
                 }
-                // Als de mapIcon 0 is dan wordt de code hieronder overgeslagen
-                // Dus er wordt geen tile aangemaakt. 0 is dus geen tile;
+                // Als de mapIcon -1 is dan wordt de code hieronder overgeslagen
+                // Dus er wordt geen tile aangemaakt. -1 is dus geen tile;
                 Tile createdTile = this.tileFactory.createTile(mapIcon);
 
                 addTileAt(createdTile, x, y);
