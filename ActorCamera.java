@@ -10,9 +10,15 @@ public class ActorCamera extends Actor {
     public int screenY;
     private int worldX;
     private int worldY;
+    private boolean firstLocation = true;
     
     @Override
     public void setLocation(int x, int y) {
+        if(firstLocation == true) {
+            firstLocation = false;
+            screenX = x;
+            screenY = y;
+        }
         super.setLocation(screenX, screenY);
         this.worldX = x;
         this.worldY = y;

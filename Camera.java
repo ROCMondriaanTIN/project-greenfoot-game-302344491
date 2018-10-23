@@ -138,5 +138,11 @@ public class Camera extends Actor {
             this.followActor.screenX = this.followActor.getX() - this.getX();
             this.followActor.screenY = this.followActor.getY() - this.getY();
         }
+        
+        for (ActorCamera actor : this.getWorld().getObjects(ActorCamera.class)) {
+            if(actor == this.followActor) continue;
+            actor.screenX = actor.getX() - this.getX();
+            actor.screenY = actor.getY() - this.getY(); 
+        }
     }
 }

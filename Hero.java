@@ -25,12 +25,11 @@ public class Hero extends ActorCamera {
     public void act() {
         double x = (double) this.getX();
         double y = (double) this.getY();
-        
+
 //        velY += acc;
 //        if (velY > gravity) {
 //            velY = gravity;
 //        }
-
         handleInput();
         velX *= drag;
         velY *= drag;
@@ -38,6 +37,14 @@ public class Hero extends ActorCamera {
         x += velX;
 
         this.setLocation((int) (x + 0.5), (int) (y + 0.5));
+
+        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            if(enemy != null) {
+                this.getWorld().removeObject(this);
+                break;
+            }
+        }
+
 //        if (isColliding()) {
 //            for(Actor tile : getIntersectingObjects(Tile.class)) {
 //                resolveColision(tile);
