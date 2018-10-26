@@ -37,9 +37,9 @@ public class MyWorld extends World {
 
 
         TileEngine te = new TileEngine(this, 60, 60, map);
-        Hero hero = new Hero(te);
-
         Camera camera = new Camera(te);
+        Hero hero = new Hero(te, camera);
+
         camera.follow(hero);
 
         addObject(camera, 0, 0);
