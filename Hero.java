@@ -54,8 +54,7 @@ public class Hero extends ActorCamera {
         }
 
         this.setLocation((int) (x + 0.5), (int) (y + 0.5));
-        collide(velX, velY);
-        
+//        collide();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
@@ -63,32 +62,26 @@ public class Hero extends ActorCamera {
                 break;
             }
         }
-
-//        if (isColliding()) {
-//            for(Actor tile : getIntersectingObjects(Tile.class)) {
-//                resolveColision(tile);
-//            }
-//            
-////            resolveColision(this.getOneIntersectingObject(Tile.class));
-//        }
     }
 
-    private void collide(double dirX, double dirY) {
+    private void collide() {
         int top = CollisionEngine.getActorTop((Actor) this);
         int left = CollisionEngine.getActorLeft((Actor) this);
         int right = CollisionEngine.getActorRight((Actor) this);
         int bottom = CollisionEngine.getActorBottom((Actor) this);
 
-        List<Tile> collidingTiles = getCollidingTiles(top, left, right, bottom);
+        List<Tile> collidingTiles = getCollidingTiles(top, left, right, bottom, this.getX(), this.getY());
         if (collidingTiles.isEmpty()) {
             return;
         }
-
+        Tile tile = collidingTiles.get(0);
+        if (tile == null) {
+            System.out.println("Tile is null");
+            System.out.println(tile);
+            return;
+        }
         int x = getX();
         int y = getY();
-
-        System.out.println(collidingTiles);
-        Tile tile = collidingTiles.get(0);
 
         System.out.println("TileID: " + tile._id);
         System.out.println("Camera y: " + camera.getY());
@@ -96,66 +89,36 @@ public class Hero extends ActorCamera {
         int bottomTile = CollisionEngine.getActorBottom(tile) + camera.getY();
         int leftTile = CollisionEngine.getActorLeft(tile) + camera.getX();
         int rightTile = CollisionEngine.getActorRight(tile) + camera.getX();
-        
 
         double overlapX = 0;
-//            if (right > leftTile) {
-//                overlapX = leftTile - right;
-//            } else if (left < rightTile) {
-//                overlapX = rightTile - left;
-//            }
-
         double overlapY = 0;
-        System.out.println("CurrentY: " + y);
-        System.out.println("VelY: " + velY);
-        System.out.println("Bottom: " + bottom);
-        System.out.println("TopTile: " + topTile);
-        System.out.println("Top: " + top);
-        System.out.println("BottomTile: " + bottomTile);
         if (bottom > topTile && top < bottomTile) {
             if (velY >= 0) {
-                System.out.println("top - bottomT");
                 overlapY = topTile - bottom;
             } else {
                 overlapY = bottomTile - top;
-                System.out.println("topT - bottom");
+            }
+        }
+
+        if (right > leftTile && left < rightTile) {
+            if (velX >= 0) {
+                overlapX = leftTile - right;
+            } else {
+                overlapX = rightTile - left;
 
             }
         }
 
-        System.out.println("OverlapX: " + overlapX);
-        System.out.println("OverlapY: " + overlapY);
-
         if (Math.abs(overlapY) > Math.abs(overlapX)) {
+            x += overlapX;
+        } else {
             velY = 0;
             y += overlapY;
-        } else {
-            x += overlapX;
         }
-        System.out.println("newY: " + y);
         setLocation(x, y);
-
-//        if (dirY > 0) {
-//            velY = 0;
-//            row = te.getRow(bottom);
-//            y = -this.getHeight() / 2 + te.getY(row);
-//        } else if (dirY < 0) {
-//            velY = 0;
-//            row = te.getRow(top);
-//            y = this.getHeight() / 2 + te.getY(row + 1);
-//        } else if (dirX > 0) {
-//            velX = 0;
-//            col = te.getColumn(right);
-//            x = -this.getWidth() / 2 + te.getX(col);
-//        } else if (dirX < 0) {
-//            velX = 0;
-//            col = te.getColumn(left);
-//            x = this.getWidth() / 2 + te.getX(col + 1);
-//        }
-//        this.setLocation(x, y);
     }
 
-    private List<Tile> getCollidingTiles(int top, int left, int right, int bottom) {
+    private List<Tile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY) {
         List<Tile> tiles = new ArrayList<>();
 
         if (checkTile(left, top)) {
@@ -169,6 +132,30 @@ public class Hero extends ActorCamera {
         }
         if (checkTile(right, top)) {
             tiles.add(getTileAtXY(right, top));
+        }
+        if (checkTile(midX, top)) {
+            Tile tile = getTileAtXY(midX, top);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
+        }
+        if (checkTile(midX, bottom)) {
+            Tile tile = getTileAtXY(midX, bottom);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
+        }
+        if (checkTile(left, midY)) {
+            Tile tile = getTileAtXY(left, midY);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
+        }
+        if (checkTile(right, midY)) {
+            Tile tile = getTileAtXY(left, midY);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
         }
         return tiles;
     }

@@ -10,13 +10,15 @@ import java.util.List;
 public class CollisionEngine {
 
     private World world;
+    private Camera camera;
     private TileEngine tileEngine;
     private List<Actor> collidingActors;
 
-    public CollisionEngine(World world, TileEngine tileEngine) {
+    public CollisionEngine(World world, TileEngine tileEngine, Camera camera) {
         this.world = world;
         this.tileEngine = tileEngine;
         collidingActors = new ArrayList<>();
+        this.camera = camera;
     }
 
     public void addCollidingActor(Actor a) {
@@ -31,21 +33,21 @@ public class CollisionEngine {
 
     public void update() {
         for (Actor actor : this.collidingActors) {
-            System.out.println("ActorLeft" + getActorLeft(actor));
-            System.out.println("FirstTile Right" + getActorRight(tileEngine.getTileAt(5, 3)));
+//            System.out.println("ActorLeft" + getActorLeft(actor));
+//            System.out.println("FirstTile Right" + getActorRight(tileEngine.getTileAt(5, 3)));
 
 //                System.out.println("Collision found");
-            if (actor instanceof ActorCamera) {
-                ActorCamera actorCamera = (ActorCamera) actor;
-                System.out.println("ActorCameraLeft" + getActorLeft(actorCamera));
-                if (detect(actorCamera)) {
-                    resolve(actorCamera);
-                }
-            } else {
-                if (detect(actor)) {
-                    resolve(actor);
-                }
+//            if (actor instanceof ActorCamera) {
+//                ActorCamera actorCamera = (ActorCamera) actor;
+////                System.out.println("ActorCameraLeft" + getActorLeft(actorCamera));
+//                if (detect(actorCamera)) {
+//                    resolve(actorCamera);
+//                }
+//            } else {
+            if (detect(actor)) {
+                resolve(actor);
             }
+//            }
         }
     }
 
@@ -58,41 +60,58 @@ public class CollisionEngine {
         return this.detect(actor, actorLeft, actorRight, actorTop, actorBottom);
     }
 
-    public boolean detect(ActorCamera actor) {
-        int actorLeft = getActorLeft(actor);
-        int actorRight = getActorRight(actor);
-        int actorTop = getActorTop(actor);
-        int actorBottom = getActorBottom(actor);
-
-        return this.detect(actor, actorLeft, actorRight, actorTop, actorBottom);
+//    public boolean detect(ActorCamera actor) {
+//        int actorLeft = getActorLeft(actor);
+//        int actorRight = getActorRight(actor);
+//        int actorTop = getActorTop(actor);
+//        int actorBottom = getActorBottom(actor);
+//
+//        return this.detect(actor, actorLeft, actorRight, actorTop, actorBottom);
+//    }
+    public boolean detect(Actor actor, int actorLeft, int actorRight, int actorTop, int actorBottom) {
+        return !getCollidingTiles(actorTop, actorLeft, actorRight, actorBottom, actor.getX(), actor.getY()).isEmpty();
     }
 
-    public boolean detect(Actor actor, int actorLeft, int actorRight, int actorTop, int actorBottom) {
-        boolean anyCollision = false;
-        for (int y = 0; y < TileEngine.MAP_HEIGHT; y++) {
-            for (int x = 0; x < TileEngine.MAP_WIDTH; x++) {
-                Tile currentTile = this.tileEngine.getTileAt(x, y);
-                if (currentTile == null || currentTile.isSolid == false) {
-                    continue;
-                }
-                System.out.println("Current Tile: " + currentTile);
-                int tileLeft = getActorLeft(currentTile);
-                int tileRight = getActorRight(currentTile);
-                int tileTop = getActorTop(currentTile);
-                int tileBottom = getActorBottom(currentTile);
+    private List<Tile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY) {
+        List<Tile> tiles = new ArrayList<>();
 
-                boolean x_overlaps = (actorLeft < tileRight) && (actorRight > tileLeft);
-                boolean y_overlaps = (actorTop < tileBottom) && (actorBottom > tileTop);
-                boolean collision = x_overlaps && y_overlaps;
-                if (collision) {
-                    System.out.println("Actor positions" + " " + actorLeft + " " + actorRight + " " + actorTop + " " + actorBottom);
-                    System.out.println("Tile positions" + " " + tileLeft + " " + tileRight + " " + tileTop + " " + tileBottom);
-
-                    anyCollision = true;
-                }
+        if (tileEngine.checkTileSolid(left, top)) {
+            tiles.add(tileEngine.getTileAtXY(left, top));
+        }
+        if (tileEngine.checkTileSolid(left, bottom)) {
+            tiles.add(tileEngine.getTileAtXY(left, bottom));
+        }
+        if (tileEngine.checkTileSolid(right, bottom)) {
+            tiles.add(tileEngine.getTileAtXY(right, bottom));
+        }
+        if (tileEngine.checkTileSolid(right, top)) {
+            tiles.add(tileEngine.getTileAtXY(right, top));
+        }
+        if (tileEngine.checkTileSolid(midX, top)) {
+            Tile tile = tileEngine.getTileAtXY(midX, top);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
             }
         }
-        return anyCollision;
+        if (tileEngine.checkTileSolid(midX, bottom)) {
+            Tile tile = tileEngine.getTileAtXY(midX, bottom);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
+        }
+        if (tileEngine.checkTileSolid(left, midY)) {
+            Tile tile = tileEngine.getTileAtXY(left, midY);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
+        }
+        if (tileEngine.checkTileSolid(right, midY)) {
+            Tile tile = tileEngine.getTileAtXY(left, midY);
+            if (tiles.indexOf(tile) == -1) {
+                tiles.add(tile);
+            }
+        }
+        return tiles;
     }
 
     public void resolve(Actor actor) {
@@ -104,40 +123,70 @@ public class CollisionEngine {
         this.resolve(actor, actorLeft, actorRight, actorTop, actorBottom);
     }
 
-    public void resolve(ActorCamera actor) {
-        int actorLeft = getActorLeft(actor);
-        int actorRight = getActorRight(actor);
-        int actorTop = getActorTop(actor);
-        int actorBottom = getActorBottom(actor);
-
-        this.resolve(actor, actorLeft, actorRight, actorTop, actorBottom);
-    }
-
-    public void resolve(Actor actor, int actorLeft, int actorRight, int actorTop, int actorBottom) {
-        for (int y = 0; y < TileEngine.MAP_HEIGHT; y++) {
-            for (int x = 0; x < TileEngine.MAP_WIDTH; x++) {
-                Tile currentTile = this.tileEngine.getTileAt(x, y);
-                if (currentTile == null || currentTile.isSolid == false) {
-                    continue;
-                }
-
-                int tileLeft = getActorLeft(currentTile);
-                int tileRight = getActorRight(currentTile);
-                int tileTop = getActorTop(currentTile);
-                int tileBottom = getActorBottom(currentTile);
-
-                int actorX = actor.getX();
-                int actorY = actor.getY();
-
-                if (actorLeft <= tileRight) {
-                    actorX = tileRight + (getActorHalfWidth(actor) + 10);
-                } else if (actorRight >= tileLeft) {
-                    actorX = tileLeft - (getActorHalfWidth(actor) + 1);
-                }
-                actor.setLocation(actorX, actorY);
-            }
-
+//    public void resolve(ActorCamera actor) {
+//        int actorLeft = getActorLeft(actor);
+//        int actorRight = getActorRight(actor);
+//        int actorTop = getActorTop(actor);
+//        int actorBottom = getActorBottom(actor);
+//
+//        this.resolve(actor, actorLeft, actorRight, actorTop, actorBottom);
+//    }
+    public void resolve(Actor actor, int left, int right, int top, int bottom) {
+        List<Tile> collidingTiles = getCollidingTiles(top, left, right, bottom, actor.getX(), actor.getY());
+        if (collidingTiles.isEmpty()) {
+            return;
         }
+        Tile tile = collidingTiles.get(0);
+        if (tile == null) {
+            System.out.println("Tile is null");
+            System.out.println(tile);
+            return;
+        }
+        int x = actor.getX();
+        int y = actor.getY();
+
+        System.out.println("TileID: " + tile._id);
+        System.out.println("Camera y: " + camera.getY());
+        int topTile = CollisionEngine.getActorTop(tile) + camera.getY();
+        int bottomTile = CollisionEngine.getActorBottom(tile) + camera.getY();
+        int leftTile = CollisionEngine.getActorLeft(tile) + camera.getX();
+        int rightTile = CollisionEngine.getActorRight(tile) + camera.getX();
+
+        double overlapX = 0;
+        double overlapY = 0;
+
+        if (right > leftTile && left < rightTile) {
+            if (Math.abs(leftTile - right) < Math.abs(rightTile - left)) {
+                overlapX = leftTile - right;
+            } else {
+                overlapX = rightTile - left;
+            }
+        }
+        System.out.println("Overlapx: " + overlapX);
+        if (Math.abs(overlapX) > 0) {
+            if (bottom > topTile && top < bottomTile) {
+                System.out.println("Math abs");
+                System.out.println(Math.abs(topTile - bottom));
+                System.out.println(Math.abs(bottomTile - top));
+                if (Math.abs(topTile - bottom) < Math.abs(bottomTile - top)) {
+                    overlapY = topTile - bottom;
+                } else {
+                    overlapY = bottomTile - top;
+                }
+            }
+            System.out.println("Overlapy: " + overlapY);
+            if (Math.abs(overlapY) > 0) {
+                if (Math.abs(overlapY) > Math.abs(overlapX)) {
+                    x += overlapX;
+                } else {
+                    y += overlapY;
+                }
+                actor.setLocation(x, y);
+            }
+        }
+
+        
+
     }
 
     public static int getActorHalfWidth(Actor a) {

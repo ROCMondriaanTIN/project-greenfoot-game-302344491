@@ -48,11 +48,11 @@ public class MyWorld extends World {
         addObject(new Enemy(), 1170, 410);
         
         
-        ce = new CollisionEngine(this, te);
+        ce = new CollisionEngine(this, te, camera);
         ce.addCollidingActor(hero);
     }
     
     public void act() {
-//        ce.update();
+        ce.update();
     }
 }

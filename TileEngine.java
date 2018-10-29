@@ -81,12 +81,28 @@ public class TileEngine {
         this.generateMap[y][x] = tile;
     }
 
-    public Tile getTileAt(int x, int y) {
+    public Tile getTileAt(int colom, int row) {
         try {
-            return this.generateMap[y][x];
+            return this.generateMap[row][colom];
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public Tile getTileAtXY(int x, int y) {
+        int col = (int) Math.floor(x / TileEngine.TILE_WIDTH);
+        int row = (int) Math.floor(y / TileEngine.TILE_HEIGHT);
+
+        Tile tile = getTileAt(col, row);
+        return tile;
+    }
+
+    public boolean checkTileSolid(int x, int y) {
+        Tile tile = getTileAtXY(x, y);
+        if (tile != null && tile.isSolid) {
+            return true;
+        }
+        return false;
     }
 
     public int getColumn(int x) {
