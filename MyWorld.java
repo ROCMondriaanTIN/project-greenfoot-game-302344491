@@ -46,6 +46,7 @@ public class MyWorld extends World {
         addObject(hero, 300, 200);
 
         addObject(new Enemy(), 1170, 410);
+//        addObject(new Enemy(), 400, 200);
         
         
         ce = new CollisionEngine(this, te, camera);

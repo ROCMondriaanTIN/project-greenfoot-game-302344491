@@ -18,8 +18,6 @@ public class Camera extends Actor {
     private double dirY;
     private boolean follow;
     private Mover followActor;
-    private double screenX;
-    private double screenY;
 
     public Camera(TileEngine tileEngine) {
         this.width = TileEngine.SCREEN_WIDTH;
@@ -41,8 +39,6 @@ public class Camera extends Actor {
         this.follow = true;
         actor.setCamera(this);
         this.followActor = actor;
-        this.followActor.screenX = 0;
-        this.followActor.screenY = 0;
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Mover extends Actor {
 
     private int worldX;
     private int worldY;
-    private boolean firstLocation;
+    private boolean firstLocation = true;
     private boolean hasCamera;
 
     public void setCamera(Camera camera) {
@@ -31,7 +31,7 @@ public class Mover extends Actor {
         if (Math.abs(velocityY) < 0.01) {
             velocityY = 0;
         }
-        setLocation((int)(getX() + .5 + velocityX), (int)(getY() + .5 + velocityY));
+        setLocation((int) (getX() + .5 + velocityX), (int) (getY() + .5 + velocityY));
     }
 
     @Override
@@ -41,31 +41,19 @@ public class Mover extends Actor {
             screenX = x;
             screenY = y;
         }
-        if (hasCamera) {
-            super.setLocation(screenX, screenY);
-            this.worldX = x;
-            this.worldY = y;
-        } else {
-            super.setLocation(x, x);
-            this.worldX = this.screenX = x;
-            this.worldY = this.screenY = y;
-        }
+        super.setLocation(screenX, screenY);
+        this.worldX = x;
+        this.worldY = y;
     }
 
     @Override
     public int getX() {
-        if (hasCamera) {
-            return this.worldX;
-        }
-        return super.getX();
+        return this.worldX;
     }
 
     @Override
     public int getY() {
-        if (hasCamera) {
-            return this.worldY;
-        }
-        return super.getY();
+        return this.worldY;
     }
 
     public int getScreenX() {

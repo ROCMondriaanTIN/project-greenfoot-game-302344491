@@ -33,17 +33,16 @@ public class Enemy extends Mover {
             xMax = x + walkRange / 2;
         }
         
-        x += speed;
-        if(x >= xMax) {
+        velocityX = speed;
+        applyVelocity();
+        if(getX() >= xMax) {
             speed *= -1;
             x = xMax;
             getImage().mirrorHorizontally();
-        }else if(x <= xMin) {
+        }else if(getX() <= xMin) {
             speed *= -1;
             x = xMin;
             getImage().mirrorHorizontally();
         }
-        setLocation(x, y);
-        
     }
 }

@@ -34,15 +34,22 @@ public class CollisionEngine {
     public void update() {
         for (Mover actor : this.collidingActors) {
             if (detect(actor)) {
-                resolve(actor);
-                if (detect(actor)) {
-                    resolve(actor);
+                int actorLeft = getActorLeft(actor);
+                int actorRight = getActorRight(actor);
+                int actorTop = getActorTop(actor);
+                int actorBottom = getActorBottom(actor);
+                List<Tile> tiles = getCollidingTiles(actorTop, actorLeft, actorRight, actorBottom, actor.getX(), actor.getY());
+                for (Tile tile : tiles) {
+                    boolean resolved = resolve(actor, tile);
+                    if(resolved) {
+                        break;
+                    }
                 }
             }
         }
     }
 
-    public boolean detect(Actor actor) {
+    public boolean detect(Mover actor) {
         int actorLeft = getActorLeft(actor);
         int actorRight = getActorRight(actor);
         int actorTop = getActorTop(actor);
@@ -51,7 +58,7 @@ public class CollisionEngine {
         return this.detect(actor, actorLeft, actorRight, actorTop, actorBottom);
     }
 
-    public boolean detect(Actor actor, int actorLeft, int actorRight, int actorTop, int actorBottom) {
+    public boolean detect(Mover actor, int actorLeft, int actorRight, int actorTop, int actorBottom) {
         return !getCollidingTiles(actorTop, actorLeft, actorRight, actorBottom, actor.getX(), actor.getY()).isEmpty();
     }
 
@@ -59,63 +66,59 @@ public class CollisionEngine {
         List<Tile> tiles = new ArrayList<>();
 
         if (tileEngine.checkTileSolid(left, top)) {
-            tiles.add(tileEngine.getTileAtXY(left, top));
+            Tile tile = tileEngine.getTileAtXY(left, top);
+            tiles.add(tile);
         }
         if (tileEngine.checkTileSolid(left, bottom)) {
-            tiles.add(tileEngine.getTileAtXY(left, bottom));
+            Tile tile = tileEngine.getTileAtXY(left, bottom);
+            if(!tiles.contains(tile)) {
+                tiles.add(tile);
+            }
         }
         if (tileEngine.checkTileSolid(right, bottom)) {
-            tiles.add(tileEngine.getTileAtXY(right, bottom));
+            Tile tile = tileEngine.getTileAtXY(right, bottom);
+            if(!tiles.contains(tile)) {
+                tiles.add(tile);
+            }
         }
         if (tileEngine.checkTileSolid(right, top)) {
-            tiles.add(tileEngine.getTileAtXY(right, top));
+            Tile tile = tileEngine.getTileAtXY(right, top);
+            if(!tiles.contains(tile)) {
+                tiles.add(tile);
+            }
         }
         if (tileEngine.checkTileSolid(midX, top)) {
             Tile tile = tileEngine.getTileAtXY(midX, top);
-            if (tiles.indexOf(tile) == -1) {
+            if(!tiles.contains(tile)) {
                 tiles.add(tile);
             }
         }
         if (tileEngine.checkTileSolid(midX, bottom)) {
             Tile tile = tileEngine.getTileAtXY(midX, bottom);
-            if (tiles.indexOf(tile) == -1) {
+            if(!tiles.contains(tile)) {
                 tiles.add(tile);
             }
         }
         if (tileEngine.checkTileSolid(left, midY)) {
             Tile tile = tileEngine.getTileAtXY(left, midY);
-            if (tiles.indexOf(tile) == -1) {
+            if(!tiles.contains(tile)) {
                 tiles.add(tile);
             }
         }
         if (tileEngine.checkTileSolid(right, midY)) {
-            Tile tile = tileEngine.getTileAtXY(left, midY);
-            if (tiles.indexOf(tile) == -1) {
+            Tile tile = tileEngine.getTileAtXY(right, midY);
+            if(!tiles.contains(tile)) {
                 tiles.add(tile);
             }
         }
         return tiles;
     }
 
-    public void resolve(Mover actor) {
-        int actorLeft = getActorLeft(actor);
-        int actorRight = getActorRight(actor);
-        int actorTop = getActorTop(actor);
-        int actorBottom = getActorBottom(actor);
-
-        this.resolve(actor, actorLeft, actorRight, actorTop, actorBottom);
-    }
-
-    public void resolve(Mover actor, int left, int right, int top, int bottom) {
-        List<Tile> collidingTiles = getCollidingTiles(top, left, right, bottom, actor.getX(), actor.getY());
-        if (collidingTiles.isEmpty()) {
-            return;
-        }
-        Tile tile = collidingTiles.get(0);
-        if (tile == null) {
-            System.out.println(tile);
-            return;
-        }
+    public boolean resolve(Mover actor, Tile tile) {
+        int left = getActorLeft(actor);
+        int right = getActorRight(actor);
+        int top = getActorTop(actor);
+        int bottom = getActorBottom(actor);
         int x = actor.getX();
         int y = actor.getY();
         int topTile = CollisionEngine.getActorTop(tile) + camera.getY();
@@ -139,111 +142,19 @@ public class CollisionEngine {
                 overlapX = leftTile - right;
             } else {
                 overlapX = rightTile - left;
-
             }
         }
-
-        if (Math.abs(overlapY) > Math.abs(overlapX)) {
-            x += overlapX;
-        } else {
-            actor.velocityY = 0;
-            y += overlapY;
-        }
-        actor.setLocation(x, y);
-        
-        
-        
-        /*
-        if (bottom > topTile && top < bottomTile) {
-            System.out.println("Math abs");
-            System.out.println(Math.abs(topTile - bottom));
-            System.out.println(Math.abs(bottomTile - top));
-            if (actor.velocityY >= 0) {
-                overlapY = topTile - bottom;
+        if(Math.abs(overlapX) > 0 && Math.abs(overlapY) > 0){            
+            if (Math.abs(overlapY) > Math.abs(overlapX)) {
+                x += overlapX;
             } else {
-                overlapY = bottomTile - top;
+                actor.velocityY = 0;
+                y += overlapY;
             }
-//                if (Math.abs(topTile - bottom) < Math.abs(bottomTile - top)) {
-//                    overlapY = topTile - bottom;
-//                } else {
-//                    overlapY = bottomTile - top;
-//                }
+            actor.setLocation(x, y);
+            return true;
         }
-
-        if (Math.abs(overlapY) > 0) {
-
-            if (right > leftTile && left < rightTile) {
-
-                if (actor.velocityX >= 0) {
-                    overlapX = leftTile - right;
-                } else {
-                    overlapX = rightTile - left;
-
-                }
-//            if (Math.abs(leftTile - right) < Math.abs(rightTile - left)) {
-//                overlapX = leftTile - right;
-//            } else {
-//                overlapX = rightTile - left;
-//            }
-            }
-            if (Math.abs(overlapX) > 0) {
-
-                if (Math.abs(overlapY) > Math.abs(overlapX)) {
-                    x += overlapX;
-                } else {
-                    y += overlapY;
-                }
-                actor.setLocation(x, y);
-            }
-
-        }
-
-*/
-        /*
-        
-        if (right > leftTile && left < rightTile) {
-
-            if (actor.velocityX >= 0) {
-                overlapX = leftTile - right;
-            } else {
-                overlapX = rightTile - left;
-
-            }
-//            if (Math.abs(leftTile - right) < Math.abs(rightTile - left)) {
-//                overlapX = leftTile - right;
-//            } else {
-//                overlapX = rightTile - left;
-//            }
-        }
-        System.out.println("Overlapx: " + overlapX);
-        if (Math.abs(overlapX) > 0) {
-            if (bottom > topTile && top < bottomTile) {
-                System.out.println("Math abs");
-                System.out.println(Math.abs(topTile - bottom));
-                System.out.println(Math.abs(bottomTile - top));
-                if (actor.velocityY >= 0) {
-                    overlapY = topTile - bottom;
-                } else {
-                    overlapY = bottomTile - top;
-                }
-//                if (Math.abs(topTile - bottom) < Math.abs(bottomTile - top)) {
-//                    overlapY = topTile - bottom;
-//                } else {
-//                    overlapY = bottomTile - top;
-//                }
-            }
-            System.out.println("Overlapy: " + overlapY);
-            if (Math.abs(overlapY) > 0) {
-
-                if (Math.abs(overlapY) > Math.abs(overlapX)) {
-                    x += overlapX;
-                } else {
-                    y += overlapY;
-                }
-                actor.setLocation(x, y);
-            }
-        }
-         */
+        return false;
     }
 
     public static int getActorHalfWidth(Actor a) {
