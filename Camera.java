@@ -17,7 +17,7 @@ public class Camera extends Actor {
     private double dirX;
     private double dirY;
     private boolean follow;
-    private ActorCamera followActor;
+    private Mover followActor;
     private double screenX;
     private double screenY;
 
@@ -37,8 +37,9 @@ public class Camera extends Actor {
         SPEED = speed;
     }
 
-    public void follow(ActorCamera actor) {
+    public void follow(Mover actor) {
         this.follow = true;
+        actor.setCamera(this);
         this.followActor = actor;
         this.followActor.screenX = 0;
         this.followActor.screenY = 0;
@@ -49,8 +50,8 @@ public class Camera extends Actor {
         dirX *= cameraDrag;
         dirY *= cameraDrag;
 
-        int x = this.getX();
-        int y = this.getY();
+        int x;
+        int y;
 
         if (Greenfoot.isKeyDown("e")) {
             follow = !follow;
@@ -118,7 +119,7 @@ public class Camera extends Actor {
         int offsetX = -this.getX() + startCol * TileEngine.TILE_WIDTH;
         int offsetY = -this.getY() + startRow * TileEngine.TILE_HEIGHT;
         
-        Tile currentTile = null;
+        Tile currentTile;
         int x = 0;
         int y = 0;
         for (y = 0; y < TileEngine.MAP_HEIGHT; y++) {
@@ -139,7 +140,7 @@ public class Camera extends Actor {
             this.followActor.screenY = this.followActor.getY() - this.getY();
         }
         
-        for (ActorCamera actor : this.getWorld().getObjects(ActorCamera.class)) {
+        for (Mover actor : this.getWorld().getObjects(Mover.class)) {
             if(actor == this.followActor) continue;
             actor.screenX = actor.getX() - this.getX();
             actor.screenY = actor.getY() - this.getY(); 

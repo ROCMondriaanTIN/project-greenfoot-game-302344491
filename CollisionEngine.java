@@ -12,7 +12,7 @@ public class CollisionEngine {
     private World world;
     private Camera camera;
     private TileEngine tileEngine;
-    private List<Actor> collidingActors;
+    private List<Mover> collidingActors;
 
     public CollisionEngine(World world, TileEngine tileEngine, Camera camera) {
         this.world = world;
@@ -21,33 +21,24 @@ public class CollisionEngine {
         this.camera = camera;
     }
 
-    public void addCollidingActor(Actor a) {
+    public void addCollidingMover(Mover a) {
         this.collidingActors.add(a);
     }
 
-    public void removeCollidingActor(Actor a) {
+    public void removeCollidingActor(Mover a) {
         if (this.collidingActors.contains(a)) {
             this.collidingActors.remove(a);
         }
     }
 
     public void update() {
-        for (Actor actor : this.collidingActors) {
-//            System.out.println("ActorLeft" + getActorLeft(actor));
-//            System.out.println("FirstTile Right" + getActorRight(tileEngine.getTileAt(5, 3)));
-
-//                System.out.println("Collision found");
-//            if (actor instanceof ActorCamera) {
-//                ActorCamera actorCamera = (ActorCamera) actor;
-////                System.out.println("ActorCameraLeft" + getActorLeft(actorCamera));
-//                if (detect(actorCamera)) {
-//                    resolve(actorCamera);
-//                }
-//            } else {
+        for (Mover actor : this.collidingActors) {
             if (detect(actor)) {
                 resolve(actor);
+                if (detect(actor)) {
+                    resolve(actor);
+                }
             }
-//            }
         }
     }
 
@@ -60,14 +51,6 @@ public class CollisionEngine {
         return this.detect(actor, actorLeft, actorRight, actorTop, actorBottom);
     }
 
-//    public boolean detect(ActorCamera actor) {
-//        int actorLeft = getActorLeft(actor);
-//        int actorRight = getActorRight(actor);
-//        int actorTop = getActorTop(actor);
-//        int actorBottom = getActorBottom(actor);
-//
-//        return this.detect(actor, actorLeft, actorRight, actorTop, actorBottom);
-//    }
     public boolean detect(Actor actor, int actorLeft, int actorRight, int actorTop, int actorBottom) {
         return !getCollidingTiles(actorTop, actorLeft, actorRight, actorBottom, actor.getX(), actor.getY()).isEmpty();
     }
@@ -114,7 +97,7 @@ public class CollisionEngine {
         return tiles;
     }
 
-    public void resolve(Actor actor) {
+    public void resolve(Mover actor) {
         int actorLeft = getActorLeft(actor);
         int actorRight = getActorRight(actor);
         int actorTop = getActorTop(actor);
@@ -123,30 +106,18 @@ public class CollisionEngine {
         this.resolve(actor, actorLeft, actorRight, actorTop, actorBottom);
     }
 
-//    public void resolve(ActorCamera actor) {
-//        int actorLeft = getActorLeft(actor);
-//        int actorRight = getActorRight(actor);
-//        int actorTop = getActorTop(actor);
-//        int actorBottom = getActorBottom(actor);
-//
-//        this.resolve(actor, actorLeft, actorRight, actorTop, actorBottom);
-//    }
-    public void resolve(Actor actor, int left, int right, int top, int bottom) {
+    public void resolve(Mover actor, int left, int right, int top, int bottom) {
         List<Tile> collidingTiles = getCollidingTiles(top, left, right, bottom, actor.getX(), actor.getY());
         if (collidingTiles.isEmpty()) {
             return;
         }
         Tile tile = collidingTiles.get(0);
         if (tile == null) {
-            System.out.println("Tile is null");
             System.out.println(tile);
             return;
         }
         int x = actor.getX();
         int y = actor.getY();
-
-        System.out.println("TileID: " + tile._id);
-        System.out.println("Camera y: " + camera.getY());
         int topTile = CollisionEngine.getActorTop(tile) + camera.getY();
         int bottomTile = CollisionEngine.getActorBottom(tile) + camera.getY();
         int leftTile = CollisionEngine.getActorLeft(tile) + camera.getX();
@@ -155,12 +126,94 @@ public class CollisionEngine {
         double overlapX = 0;
         double overlapY = 0;
 
+        if (bottom > topTile && top < bottomTile) {
+            if (actor.velocityY >= 0) {
+                overlapY = topTile - bottom;
+            } else {
+                overlapY = bottomTile - top;
+            }
+        }
+
         if (right > leftTile && left < rightTile) {
-            if (Math.abs(leftTile - right) < Math.abs(rightTile - left)) {
+            if (actor.velocityX >= 0) {
                 overlapX = leftTile - right;
             } else {
                 overlapX = rightTile - left;
+
             }
+        }
+
+        if (Math.abs(overlapY) > Math.abs(overlapX)) {
+            x += overlapX;
+        } else {
+            actor.velocityY = 0;
+            y += overlapY;
+        }
+        actor.setLocation(x, y);
+        
+        
+        
+        /*
+        if (bottom > topTile && top < bottomTile) {
+            System.out.println("Math abs");
+            System.out.println(Math.abs(topTile - bottom));
+            System.out.println(Math.abs(bottomTile - top));
+            if (actor.velocityY >= 0) {
+                overlapY = topTile - bottom;
+            } else {
+                overlapY = bottomTile - top;
+            }
+//                if (Math.abs(topTile - bottom) < Math.abs(bottomTile - top)) {
+//                    overlapY = topTile - bottom;
+//                } else {
+//                    overlapY = bottomTile - top;
+//                }
+        }
+
+        if (Math.abs(overlapY) > 0) {
+
+            if (right > leftTile && left < rightTile) {
+
+                if (actor.velocityX >= 0) {
+                    overlapX = leftTile - right;
+                } else {
+                    overlapX = rightTile - left;
+
+                }
+//            if (Math.abs(leftTile - right) < Math.abs(rightTile - left)) {
+//                overlapX = leftTile - right;
+//            } else {
+//                overlapX = rightTile - left;
+//            }
+            }
+            if (Math.abs(overlapX) > 0) {
+
+                if (Math.abs(overlapY) > Math.abs(overlapX)) {
+                    x += overlapX;
+                } else {
+                    y += overlapY;
+                }
+                actor.setLocation(x, y);
+            }
+
+        }
+
+*/
+        /*
+        
+        if (right > leftTile && left < rightTile) {
+
+            if (actor.velocityX >= 0) {
+                overlapX = leftTile - right;
+            } else {
+                overlapX = rightTile - left;
+
+            }
+//            if (Math.abs(leftTile - right) < Math.abs(rightTile - left)) {
+//                overlapX = leftTile - right;
+//            } else {
+//                overlapX = rightTile - left;
+//            }
         }
         System.out.println("Overlapx: " + overlapX);
         if (Math.abs(overlapX) > 0) {
@@ -168,14 +221,20 @@ public class CollisionEngine {
                 System.out.println("Math abs");
                 System.out.println(Math.abs(topTile - bottom));
                 System.out.println(Math.abs(bottomTile - top));
-                if (Math.abs(topTile - bottom) < Math.abs(bottomTile - top)) {
+                if (actor.velocityY >= 0) {
                     overlapY = topTile - bottom;
                 } else {
                     overlapY = bottomTile - top;
                 }
+//                if (Math.abs(topTile - bottom) < Math.abs(bottomTile - top)) {
+//                    overlapY = topTile - bottom;
+//                } else {
+//                    overlapY = bottomTile - top;
+//                }
             }
             System.out.println("Overlapy: " + overlapY);
             if (Math.abs(overlapY) > 0) {
+
                 if (Math.abs(overlapY) > Math.abs(overlapX)) {
                     x += overlapX;
                 } else {
@@ -184,9 +243,7 @@ public class CollisionEngine {
                 actor.setLocation(x, y);
             }
         }
-
-        
-
+         */
     }
 
     public static int getActorHalfWidth(Actor a) {
@@ -212,21 +269,4 @@ public class CollisionEngine {
     public static int getActorRight(Actor a) {
         return a.getX() + a.getImage().getWidth() / 2;
     }
-
-    public static int getActorTop(ActorCamera a) {
-        return a.screenY - a.getImage().getHeight() / 2;
-    }
-
-    public static int getActorBottom(ActorCamera a) {
-        return a.screenY + a.getImage().getHeight() / 2;
-    }
-
-    public static int getActorLeft(ActorCamera a) {
-        return a.screenX - a.getImage().getWidth() / 2;
-    }
-
-    public static int getActorRight(ActorCamera a) {
-        return a.screenX + a.getImage().getWidth() / 2;
-    }
-
 }

@@ -38,7 +38,7 @@ public class MyWorld extends World {
 
         TileEngine te = new TileEngine(this, 60, 60, map);
         Camera camera = new Camera(te);
-        Hero hero = new Hero(te, camera);
+        Hero hero = new Hero(te);
 
         camera.follow(hero);
 
@@ -49,7 +49,7 @@ public class MyWorld extends World {
         
         
         ce = new CollisionEngine(this, te, camera);
-        ce.addCollidingActor(hero);
+        ce.addCollidingMover(hero);
     }
     
     public void act() {

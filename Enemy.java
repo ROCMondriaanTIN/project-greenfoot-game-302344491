@@ -5,7 +5,7 @@ import greenfoot.*;
  *
  * @author cyrie
  */
-public class Enemy extends ActorCamera {
+public class Enemy extends Mover {
 
     private int walkRange;
     private int xMin;
