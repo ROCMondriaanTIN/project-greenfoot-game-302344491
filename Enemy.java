@@ -1,9 +1,8 @@
-
 import greenfoot.*;
 
 /**
  *
- * @author cyrie
+ * @author R. Springer
  */
 public class Enemy extends Mover {
 

@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Roy
+ * @author R. Springer
  */
 public class TileFactory {
     
+    /**
+     * Creates a Tile object based on the mapIcon number you give
+     * @param mapIcon number
+     * @return Tile tile object
+     */
     public static Tile createTile(int mapIcon) {
         Tile tile;
         switch(mapIcon) {
@@ -35,6 +34,7 @@ public class TileFactory {
                 break;
             case 5:
                 tile = new Tile("bridgeLogs.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.getImage().mirrorVertically();
                 tile.isSolid = true;
                 break;
             case 6:

@@ -1,6 +1,9 @@
-
 import greenfoot.*;
 
+/**
+ *
+ * @author R. Springer
+ */
 public class Mover extends Actor {
 
     public int screenX;
@@ -14,16 +17,28 @@ public class Mover extends Actor {
     private boolean firstLocation = true;
     private boolean hasCamera;
 
+    /**
+     * Methode to set the camera a Mover can have
+     * @param camera A Camera class
+     */
     public void setCamera(Camera camera) {
         this.camera = camera;
         hasCamera = true;
     }
 
+    /**
+     * Removes the camera if a camera has been set
+     */
     public void removeCamera() {
-        this.camera = null;
-        hasCamera = false;
+        if(hasCamera) {
+            this.camera = null;
+            hasCamera = false;
+        }
     }
 
+    /**
+     * Apply change in position based on velocityX and velocityY
+     */
     public void applyVelocity() {
         if (Math.abs(velocityX) < 0.01) {
             velocityX = 0;
@@ -56,12 +71,29 @@ public class Mover extends Actor {
         return this.worldY;
     }
 
+    /**
+     * Returns the x position based on the screen
+     * @return 
+     */
     public int getScreenX() {
         return this.screenX;
     }
 
+    /**
+     * Returns the y position based on the screen
+     * @return 
+     */
     public int getScreenY() {
         return this.screenY;
     }
 
+    @Override
+    public String toString() {
+        return "X: " + getX() + "\n"
+                + "Y: " + getY() + "\n"
+                + "screenX: " + getScreenX() + "\n"
+                + "screenY: " + getScreenY() + "\n"
+                + "velocityX: " + velocityX + "\n"
+                + "velocityY: " + velocityY + "\n";
+    }
 }

@@ -3,7 +3,7 @@ import greenfoot.*;
 
 /**
  *
- * @author Roy
+ * @author R. Springer
  */
 public class Camera extends Actor {
 
@@ -19,6 +19,12 @@ public class Camera extends Actor {
     private boolean follow;
     private Mover followActor;
 
+    /**
+     * The constructor of the Camera class
+     * Camera class moves the Tiles and Mover classes around according to the 
+     * camera position. Uses the tile engine to retrieve the tiles to move.
+     * @param tileEngine TileEngine that is used to retrieve the tiles.
+     */
     public Camera(TileEngine tileEngine) {
         this.width = TileEngine.SCREEN_WIDTH;
         this.height = TileEngine.SCREEN_HEIGHT;
@@ -30,15 +36,26 @@ public class Camera extends Actor {
         this.setImage(new GreenfootImage(1, 1));
     }
 
+    /**
+     * The contructor of the Camera class
+     * Camera class moves the Tiles and Mover classes around according to the 
+     * camera position. Uses the tile engine to retrieve the tiles to move.
+     * @param tileEngine TileEngine that is used to retrieve te tiles.
+     * @param speed the speed of the movement of the camera (Free movement)
+     */
     public Camera(TileEngine tileEngine, int speed) {
         this(tileEngine);
         SPEED = speed;
     }
 
-    public void follow(Mover actor) {
+    /**
+     * This methode will make this class follow the Mover you give.
+     * @param mover A Mover class or an extend of it. The Mover class is able to be followed.
+     */
+    public void follow(Mover mover) {
         this.follow = true;
-        actor.setCamera(this);
-        this.followActor = actor;
+        mover.setCamera(this);
+        this.followActor = mover;
     }
 
     @Override
@@ -94,6 +111,12 @@ public class Camera extends Actor {
         this.updateView();
     }
 
+    /**
+     * This methode can be used to move the camera around the world. Make sure
+     * you don't move when you are following.
+     * @param dirX The direction x
+     * @param dirY The direction y
+     */
     public void move(double dirX, double dirY) {
         int x = this.getX();
         int y = this.getY();
@@ -107,6 +130,13 @@ public class Camera extends Actor {
         System.out.println("Move at location: " + getX()+ ", " + getY());
     }
 
+    /**
+     * This method will update the Tiles from the engine to match the view.
+     * Also it will update all the Movers classes in the wolrd. So objects 
+     * move around with the camera. If an Actor class is added it will not
+     * move around with the camera. It has to be a class that is the Mover or a
+     * extend of the Mover class.
+     */
     public void updateView() {
         int startCol = (int) Math.floor(this.getY() / TileEngine.TILE_HEIGHT);
         int endCol = startCol + (this.height / TileEngine.TILE_HEIGHT);

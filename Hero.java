@@ -1,11 +1,9 @@
 
 import greenfoot.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
- * @author Roy
+ * @author R. Springer
  */
 public class Hero extends Mover {
 
