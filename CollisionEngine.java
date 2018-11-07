@@ -9,21 +9,19 @@ import java.util.List;
  */
 public class CollisionEngine {
 
+    
     public static final boolean DEBUG = false;
-    private World world;
-    private Camera camera;
-    private TileEngine tileEngine;
-    private List<Mover> collidingActors;
+    private final Camera camera;
+    private final TileEngine tileEngine;
+    private final List<Mover> collidingActors;
 
     /**
      * The constructor of the CollisionEngine.
      *
-     * @param world The World or a extend of the World class
      * @param tileEngine The TileEngine
      * @param camera The camera
      */
-    public CollisionEngine(World world, TileEngine tileEngine, Camera camera) {
-        this.world = world;
+    public CollisionEngine(TileEngine tileEngine, Camera camera) {
         this.tileEngine = tileEngine;
         collidingActors = new ArrayList<>();
         this.camera = camera;

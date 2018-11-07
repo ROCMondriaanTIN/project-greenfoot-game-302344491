@@ -50,7 +50,7 @@ public class MyWorld extends World {
 //        addObject(new Enemy(), 400, 200);
         
         
-        ce = new CollisionEngine(this, te, camera);
+        ce = new CollisionEngine(te, camera);
         ce.addCollidingMover(hero);
     }
         

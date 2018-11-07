@@ -22,16 +22,17 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
+        
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        this.applyVelocity();
+        applyVelocity();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                this.getWorld().removeObject(this);
+                getWorld().removeObject(this);
                 break;
             }
         }
@@ -50,10 +51,10 @@ public class Hero extends Mover {
     }
 
     public int getWidth() {
-        return this.getImage().getWidth();
+        return getImage().getWidth();
     }
 
     public int getHeight() {
-        return this.getImage().getHeight();
+        return getImage().getHeight();
     }
 }
