@@ -7,25 +7,20 @@ import greenfoot.*;
  */
 public class Hero extends Mover {
 
-    private double gravity;
-    private double acc;
-    private double drag;
-    private TileEngine te;
+    private final double gravity;
+    private final double acc;
+    private final double drag;
 
-    public Hero(TileEngine te) {
+    public Hero() {
         super();
-        this.te = te;
-        setImage("p1.png");
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
+        setImage("p1.png");
     }
 
     @Override
     public void act() {
-        double x = (double) this.getX();
-        double y = (double) this.getY();
-
         handleInput();
         velocityX *= drag;
         velocityY += acc;
@@ -45,8 +40,6 @@ public class Hero extends Mover {
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
             velocityY = -10;
-        } else if (Greenfoot.isKeyDown("s")) {
-//            velY = 2;
         }
 
         if (Greenfoot.isKeyDown("a")) {

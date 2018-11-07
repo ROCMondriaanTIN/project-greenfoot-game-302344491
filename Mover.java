@@ -1,3 +1,4 @@
+
 import greenfoot.*;
 
 /**
@@ -19,6 +20,7 @@ public class Mover extends Actor {
 
     /**
      * Methode to set the camera a Mover can have
+     *
      * @param camera A Camera class
      */
     public void setCamera(Camera camera) {
@@ -30,7 +32,7 @@ public class Mover extends Actor {
      * Removes the camera if a camera has been set
      */
     public void removeCamera() {
-        if(hasCamera) {
+        if (hasCamera) {
             this.camera = null;
             hasCamera = false;
         }
@@ -73,7 +75,8 @@ public class Mover extends Actor {
 
     /**
      * Returns the x position based on the screen
-     * @return 
+     *
+     * @return
      */
     public int getScreenX() {
         return this.screenX;
@@ -81,7 +84,8 @@ public class Mover extends Actor {
 
     /**
      * Returns the y position based on the screen
-     * @return 
+     *
+     * @return
      */
     public int getScreenY() {
         return this.screenY;

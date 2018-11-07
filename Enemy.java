@@ -1,3 +1,4 @@
+
 import greenfoot.*;
 
 /**
@@ -11,7 +12,7 @@ public class Enemy extends Mover {
     private int xMax;
     private boolean firstAct;
     private int speed;
-    
+
     public Enemy() {
         super();
         setImage("pokerMad.png");
@@ -31,14 +32,14 @@ public class Enemy extends Mover {
             xMin = x - walkRange / 2;
             xMax = x + walkRange / 2;
         }
-        
+
         velocityX = speed;
         applyVelocity();
-        if(getX() >= xMax) {
+        if (getX() >= xMax) {
             speed *= -1;
             x = xMax;
             getImage().mirrorHorizontally();
-        }else if(getX() <= xMin) {
+        } else if (getX() <= xMin) {
             speed *= -1;
             x = xMin;
             getImage().mirrorHorizontally();

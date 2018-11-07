@@ -22,10 +22,11 @@ public class TileEngine {
 
     /**
      * Constuctor of the TileEngine
+     *
      * @param world A World class or a extend of it.
-     * @param tileWidth The width of the tile used in the TileFactory 
-     * and calculations
-     * @param tileHeight The heigth of the tile used in the TileFactory and 
+     * @param tileWidth The width of the tile used in the TileFactory and
+     * calculations
+     * @param tileHeight The heigth of the tile used in the TileFactory and
      * calculations
      */
     public TileEngine(World world, int tileWidth, int tileHeight) {
@@ -39,10 +40,11 @@ public class TileEngine {
 
     /**
      * Constuctor of the TileEngine
+     *
      * @param world A World class or a extend of it.
-     * @param tileWidth The width of the tile used in the TileFactory 
-     * and calculations
-     * @param tileHeight The heigth of the tile used in the TileFactory and 
+     * @param tileWidth The width of the tile used in the TileFactory and
+     * calculations
+     * @param tileHeight The heigth of the tile used in the TileFactory and
      * calculations
      * @param map A tilemap with numbers
      */
@@ -54,7 +56,8 @@ public class TileEngine {
     /**
      * The setMap method used to set a map. This method also clears the previous
      * map and generates a new one.
-     * @param map 
+     *
+     * @param map
      */
     public void setMap(int[][] map) {
         this.clearTilesWorld();
@@ -68,6 +71,7 @@ public class TileEngine {
     /**
      * The setTileFactory sets a tilefactory. You can use this if you want to
      * create you own tilefacory and use it in the class.
+     *
      * @param tf A Tilefactory or extend of it.
      */
     public void setTileFactory(TileFactory tf) {
@@ -107,8 +111,9 @@ public class TileEngine {
     }
 
     /**
-     * Adds a tile on the colom and row. Calculation is based on TILE_WIDTH and 
+     * Adds a tile on the colom and row. Calculation is based on TILE_WIDTH and
      * TILE_HEIGHT
+     *
      * @param tile The Tile
      * @param colom The colom where the tile exist in the map
      * @param row The row where the tile exist in the map
@@ -127,6 +132,7 @@ public class TileEngine {
 
     /**
      * Retrieves a tile at the location based on colom and row in the map
+     *
      * @param colom
      * @param row
      * @return The tile at the location colom and row. Returns null if it cannot
@@ -142,6 +148,7 @@ public class TileEngine {
 
     /**
      * Retrieves a tile based on a x and y position in the world
+     *
      * @param x X-position in the world
      * @param y Y-position in the world
      * @return The tile at the location colom and row. Returns null if it cannot
@@ -158,9 +165,10 @@ public class TileEngine {
     /**
      * This methode checks if a tile on a x and y position in the world is solid
      * or not.
+     *
      * @param x X-position in the world
      * @param y Y-position in the world
-     * @return Tile at location is solid 
+     * @return Tile at location is solid
      */
     public boolean checkTileSolid(int x, int y) {
         Tile tile = getTileAtXY(x, y);
@@ -172,6 +180,7 @@ public class TileEngine {
 
     /**
      * This methode returns a colom based on a x position.
+     *
      * @param x
      * @return the colom
      */
@@ -181,6 +190,7 @@ public class TileEngine {
 
     /**
      * This methode returns a row based on a y position.
+     *
      * @param y
      * @return the row
      */
@@ -190,6 +200,7 @@ public class TileEngine {
 
     /**
      * This methode returns a x position based on the colom
+     *
      * @param col
      * @return The x position
      */
@@ -199,6 +210,7 @@ public class TileEngine {
 
     /**
      * This methode returns a y position based on the row
+     *
      * @param row
      * @return The y position
      */

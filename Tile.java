@@ -13,6 +13,7 @@ public class Tile extends Actor {
 
     /**
      * Contructor of the tile. Creates a tile based on image, width and height
+     *
      * @param image Path to the image file
      * @param width Width of the tile
      * @param heigth Height of the tile
@@ -30,8 +31,8 @@ public class Tile extends Actor {
 
     @Override
     public String toString() {
-        return "id: " + _id + "\n" +
-                "X: " + getX() + "\n" +
-                "Y: " + getY();
+        return "id: " + _id + "\n"
+                + "X: " + getX() + "\n"
+                + "Y: " + getY();
     }
 }

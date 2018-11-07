@@ -39,7 +39,7 @@ public class MyWorld extends World {
 
         TileEngine te = new TileEngine(this, 60, 60, map);
         Camera camera = new Camera(te);
-        Hero hero = new Hero(te);
+        Hero hero = new Hero();
 
         camera.follow(hero);
 
