@@ -40,7 +40,7 @@ public class Hero extends Mover {
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
-            velocityY = -10;
+            velocityY = -20;
         }
 
         if (Greenfoot.isKeyDown("a")) {
