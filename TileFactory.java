@@ -11,7 +11,7 @@ public class TileFactory {
      * @param mapIcon number
      * @return Tile tile object
      */
-    public static Tile createTile(int mapIcon) {
+    public Tile createTile(int mapIcon) {
         Tile tile;
         switch (mapIcon) {
             case 0:

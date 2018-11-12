@@ -74,7 +74,7 @@ public class Camera extends Actor {
 
         // Als je in debug modus zit kan je met de "e" toets de camera los koppelen
         // ben besturen met de pijltjes toetsen.
-        if(CollisionEngine.DEBUG) {
+        if (CollisionEngine.DEBUG) {
             currentSwitchCameraDown = Greenfoot.isKeyDown("e");
             if (currentSwitchCameraDown && !prevSwitchCameraDown) {
                 follow = !follow;
