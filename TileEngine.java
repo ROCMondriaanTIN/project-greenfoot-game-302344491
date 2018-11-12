@@ -139,11 +139,10 @@ public class TileEngine {
      * find a tile.
      */
     public Tile getTileAt(int colom, int row) {
-        try {
-            return this.generateMap[row][colom];
-        } catch (Exception e) {
+        if(row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
             return null;
         }
+        return this.generateMap[row][colom];
     }
 
     /**

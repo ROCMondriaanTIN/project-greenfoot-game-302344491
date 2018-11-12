@@ -14,6 +14,7 @@ public class CollisionEngine {
     private final Camera camera;
     private final TileEngine tileEngine;
     private final List<Mover> collidingActors;
+    private final List<Tile> collidingTiles;
 
     /**
      * The constructor of the CollisionEngine.
@@ -24,6 +25,7 @@ public class CollisionEngine {
     public CollisionEngine(TileEngine tileEngine, Camera camera) {
         this.tileEngine = tileEngine;
         collidingActors = new ArrayList<>();
+        collidingTiles = new ArrayList<>(6);
         this.camera = camera;
     }
 
@@ -112,55 +114,56 @@ public class CollisionEngine {
      * @return Returns a list of tiles that are located on those positions.
      */
     private List<Tile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY) {
-        List<Tile> tiles = new ArrayList<>();
+        collidingTiles.clear();
 
-        if (tileEngine.checkTileSolid(left, top)) {
-            Tile tile = tileEngine.getTileAtXY(left, top);
-            tiles.add(tile);
+        Tile tile = tileEngine.getTileAtXY(left, top);
+        if (tile != null && tile.isSolid) {
+            collidingTiles.add(tile);
         }
-        if (tileEngine.checkTileSolid(left, bottom)) {
-            Tile tile = tileEngine.getTileAtXY(left, bottom);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        tile = tileEngine.getTileAtXY(left, bottom);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        if (tileEngine.checkTileSolid(right, bottom)) {
-            Tile tile = tileEngine.getTileAtXY(right, bottom);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        tile = tileEngine.getTileAtXY(right, bottom);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        if (tileEngine.checkTileSolid(right, top)) {
-            Tile tile = tileEngine.getTileAtXY(right, top);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        tile = tileEngine.getTileAtXY(right, top);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        if (tileEngine.checkTileSolid(midX, top)) {
-            Tile tile = tileEngine.getTileAtXY(midX, top);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        
+        tile = tileEngine.getTileAtXY(midX, top);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        if (tileEngine.checkTileSolid(midX, bottom)) {
-            Tile tile = tileEngine.getTileAtXY(midX, bottom);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        tile = tileEngine.getTileAtXY(midX, bottom);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        if (tileEngine.checkTileSolid(left, midY)) {
-            Tile tile = tileEngine.getTileAtXY(left, midY);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        tile = tileEngine.getTileAtXY(left, midY);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        if (tileEngine.checkTileSolid(right, midY)) {
-            Tile tile = tileEngine.getTileAtXY(right, midY);
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
+        tile = tileEngine.getTileAtXY(right, midY);
+        if (tile != null && tile.isSolid) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
             }
         }
-        return tiles;
+        return collidingTiles;
     }
 
     /**
