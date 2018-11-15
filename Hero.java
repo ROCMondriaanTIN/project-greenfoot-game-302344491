@@ -27,7 +27,7 @@ public class Hero extends Mover {
         velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
-        }
+        } 
         applyVelocity();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
@@ -40,7 +40,7 @@ public class Hero extends Mover {
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
-            velocityY = -20;
+            velocityY = -12;
         }
 
         if (Greenfoot.isKeyDown("a")) {
