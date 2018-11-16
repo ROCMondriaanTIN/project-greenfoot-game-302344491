@@ -376,15 +376,15 @@ tile.isSolid = true;
 break;
 case 90:
 tile=new Tile("liquidLava.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 91:
 tile=new Tile("liquidLavaTop.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 92:
 tile=new Tile("liquidLavaTop_mid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 93:
 tile=new Tile("liquidWater.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
@@ -700,6 +700,10 @@ tile.isSolid = true;
 break;
 case 171:
 tile=new Tile("window.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = true;
+break;
+case 172:
+tile=new DodelijkeLava("liquidLava2.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
             default:

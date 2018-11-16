@@ -10,6 +10,8 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    private int x=185;
+    private int y=493;
 
     public Hero() {
         super();
@@ -22,22 +24,34 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+        checkpoint();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         } 
         applyVelocity();
+        for (Actor DodelijkeLava : getObjectsInRange(84, DodelijkeLava.class)) {
+            if (DodelijkeLava != null && DodelijkeLava instanceof DodelijkeLava )
+            setLocation(x, y);
+            break;
+        }
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation(x,y);
                 break;
             }
         }
     }
-
+    public void checkpoint()
+    {
+    if(isTouching(Checkpoint.class))    
+    {
+    x=getX();
+    y=getY();
+}
+    }
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
             velocityY = -12;
@@ -57,4 +71,5 @@ public class Hero extends Mover {
     public int getHeight() {
         return getImage().getHeight();
     }
+    
 }
