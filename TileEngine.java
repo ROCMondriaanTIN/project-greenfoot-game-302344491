@@ -139,7 +139,7 @@ public class TileEngine {
      * find a tile.
      */
     public Tile getTileAt(int colom, int row) {
-        if(row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
+        if (row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
             return null;
         }
         return this.generateMap[row][colom];
@@ -159,6 +159,37 @@ public class TileEngine {
 
         Tile tile = getTileAt(col, row);
         return tile;
+    }
+
+    /**
+     * Removes tile at the given colom and row
+     *
+     * @param colom
+     * @param row
+     * @return true if the tile has successfully been removed
+     */
+    public boolean removeTileAt(int colom, int row) {
+        if (row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
+            return false;
+        }
+        Tile tile = this.generateMap[row][colom];
+        this.world.removeObject(tile);
+        this.generateMap[row][colom] = null;
+        return true;
+    }
+
+    /**
+     * Removes tile at the given x and y position
+     *
+     * @param x X-position in the world
+     * @param y Y-position in the world
+     * @return
+     */
+    public boolean removeTileAtXY(int x, int y) {
+        int col = getColumn(x);
+        int row = getRow(y);
+
+        return removeTileAt(col, row);
     }
 
     /**
