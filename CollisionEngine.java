@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class CollisionEngine {
 
-    
     public static final boolean DEBUG = false;
     private final Camera camera;
     private final TileEngine tileEngine;
@@ -134,7 +133,7 @@ public class CollisionEngine {
                 collidingTiles.add(tile);
             }
         }
-        
+
         tile = tileEngine.getTileAtXY(midX, top);
         if (tile != null && (addNoneSolid || tile.isSolid)) {
             if (!collidingTiles.contains(tile)) {
@@ -161,11 +160,13 @@ public class CollisionEngine {
         }
         return collidingTiles;
     }
-    
+
     /**
      * Getting the colliding Tiles from the collision engine
+     *
      * @param mover A Mover class or a extend of it.
-     * @param addNoneSolid If true it also add tiles that are not solid to the list
+     * @param addNoneSolid If true it also add tiles that are not solid to the
+     * list
      * @return A List of overlapping tiles.
      */
     public List<Tile> getCollidingTiles(Mover mover, boolean addNoneSolid) {

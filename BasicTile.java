@@ -1,3 +1,4 @@
+
 import greenfoot.*;
 
 /**
@@ -5,18 +6,18 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class BasicTile extends Actor {
-    
+
     public boolean isSolid = false;
     public int _id;
-    
+
     protected static int id;
-    
+
     protected TileType type = TileType.DEFAULT;
     protected int mapIcon = -1;
     protected int mapID = -1;
     private int colom = -1;
     protected int row = -1;
-    
+
     /**
      * Constructor of the tile. Creates a tile based on image, width and height
      *
@@ -34,9 +35,10 @@ public class BasicTile extends Actor {
         _id = id;
         id++;
     }
-    
+
     /**
      * Constructor for the use of a type
+     *
      * @param image Path to the image file
      * @param width Width of the tile
      * @param heigth Height of the tile
@@ -46,7 +48,7 @@ public class BasicTile extends Actor {
         this(image, width, heigth);
         this.type = type;
     }
-    
+
     @Override
     public String toString() {
         return "id: " + _id + "\n"
