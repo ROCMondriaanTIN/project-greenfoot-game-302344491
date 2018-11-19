@@ -36,23 +36,14 @@ public class BasicTile extends Actor {
     }
     
     /**
-     * Constructor, easy to use when width and height of the tile are the same.
-     * 
-     * @param image Path to the image file
-     * @param size width and height of the tile
-     */
-    public BasicTile(String image, int size) {
-        this(image, size, size);
-    }
-    
-    /**
      * Constructor for the use of a type
      * @param image Path to the image file
-     * @param size width and height of the tile
+     * @param width Width of the tile
+     * @param heigth Height of the tile
      * @param type The type of the tile
      */
-    public BasicTile(String image, int size, TileType type) {
-        this(image, size, size);
+    public BasicTile(String image, int width, int heigth, TileType type) {
+        this(image, width, heigth);
         this.type = type;
     }
     
