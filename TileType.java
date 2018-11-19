@@ -11,5 +11,6 @@
 public enum TileType {
     GROUND,
     WATER,
+    BOX,
     // Add your own tile types here
 }
