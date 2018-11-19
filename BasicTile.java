@@ -12,10 +12,10 @@ public class BasicTile extends Actor {
     protected static int id;
     
     protected TileType type;
-    protected int mapIcon;
-    protected int mapID;
-    protected int colom;
-    protected int row;
+    protected int mapIcon = -1;
+    protected int mapID = -1;
+    private int colom = -1;
+    protected int row = -1;
     
     /**
      * Constructor of the tile. Creates a tile based on image, width and height
