@@ -9,6 +9,7 @@
  * @author Roy
  */
 public enum TileType {
+    DEFAULT,
     GROUND,
     WATER,
     BOX,

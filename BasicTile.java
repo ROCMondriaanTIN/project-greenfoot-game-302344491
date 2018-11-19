@@ -11,7 +11,7 @@ public class BasicTile extends Actor {
     
     protected static int id;
     
-    protected TileType type;
+    protected TileType type = TileType.DEFAULT;
     protected int mapIcon = -1;
     protected int mapID = -1;
     private int colom = -1;
@@ -51,7 +51,8 @@ public class BasicTile extends Actor {
     public String toString() {
         return "id: " + _id + "\n"
                 + "X: " + getX() + "\n"
-                + "Y: " + getY();
+                + "Y: " + getY() + "\n"
+                + "Type: " + getType();
     }
 
     public TileType getType() {
