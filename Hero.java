@@ -43,7 +43,16 @@ public class Hero extends Mover {
                 break;
             }
         }
+        
+        for (Actor enemy : getIntersectingObjects(Highjump.class)){
+        if(enemy != null){
+            velocityY = -20;
+            setLocation(getX() + 100, getY());
+            return;
+        }
+        }
     }
+    
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))    
