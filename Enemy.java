@@ -12,6 +12,7 @@ public class Enemy extends Mover {
     private int xMax;
     private boolean firstAct;
     private int speed;
+    
 
     public Enemy() {
         super();
@@ -21,6 +22,7 @@ public class Enemy extends Mover {
         firstAct = true;
         speed = 1;
     }
+    
 
     @Override
     public void act() {

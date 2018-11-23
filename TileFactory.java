@@ -391,11 +391,11 @@ tile=new Tile("liquidWater.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 94:
-tile=new Highjump("liquidWaterTop.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new Tile("liquidWaterTop.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = false;
 break;
 case 95:
-tile=new Highjump("liquidWaterTop_mid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new Tile("liquidWaterTop_mid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid =false;
 break;
 case 96:
@@ -705,6 +705,14 @@ break;
 case 172:
 tile=new DodelijkeLava("liquidLava2.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
+break;
+case 173:
+tile=new Highjump("springboardDown.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = false;
+break;
+case 174:
+tile=new Highjump("springboardup.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = false;
 break;
             default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

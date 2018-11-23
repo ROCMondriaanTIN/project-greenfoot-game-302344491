@@ -20,9 +20,9 @@ C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\do
 UTF-8
 -charset
 UTF-8
-C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\Mover.java
+C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\Hero.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\Mover.java...
+Loading source file C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\Hero.java...
 Constructing Javadoc information...
 warning: unknown enum constant Tag.Any
   reason: class file for threadchecker.Tag not found
@@ -31,7 +31,7 @@ warning: unknown enum constant Tag.Any
 warning: unknown enum constant Tag.Any
 Standard Doclet version 1.8.0_181
 Building tree for all the packages and classes...
-Generating C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\doc\Mover.html...
+Generating C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\doc\Hero.html...
 C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\Mover.java:81: warning - @return tag has no arguments.
 C:\Users\302344491\Desktop\greenfoot project\project-greenfoot-game-302344491\Mover.java:90: warning - @return tag has no arguments.
 warning: unknown enum constant Tag.Simulation
