@@ -14,6 +14,7 @@ public class Hero extends Mover {
     private int x=185;
     private int y=493;
     
+    
     private GreenfootImage walk1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage walk2 = new GreenfootImage("p1_walk02.png");
     private GreenfootImage walk3 = new GreenfootImage("p1_walk03.png");
@@ -75,6 +76,7 @@ public class Hero extends Mover {
         }
     }
     
+    
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))    
@@ -84,23 +86,21 @@ public class Hero extends Mover {
 }
     }
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
-            velocityY = -12;
-            setImage("p1_jump.png");
-        } 
-        if (Greenfoot.isKeyDown("w") && (Greenfoot.isKeyDown("d"))) {
+        if (Greenfoot.isKeyDown("w")) 
+        {
             velocityY = -12;
             setImage("p1_jump.png");
         }
+       
+   
         if (Greenfoot.isKeyDown("space")) {
             velocityY = -12;
             setImage("p1_jump.png");
         }
 
-        if (Greenfoot.isKeyDown("e")) {
+        if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
             animateLeft();
-            //getImage().mirrorHorizontally();
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 2;
             animateRight();

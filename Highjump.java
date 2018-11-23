@@ -20,19 +20,30 @@ public class Highjump extends Tile
     @Override
     public void act()
     {
-    for(Mover hero: getIntersectingObjects(Hero.class))    
-    {
+    
     
         if(frame == 1){
             setImage ("springboardDown.png");
         }
-        else if(frame == 2){
+        if(frame == 2){
+            setImage ("springboardDown.png");
+        }
+        if(frame == 3){
+            setImage ("springboardDown.png");
+        }
+        if(frame == 4){
+            setImage ("springboardUp.png");
+        }
+        if(frame == 5){
+            setImage ("springboardUp.png");
+        }
+        else if(frame == 6){
             setImage ("springboardUp.png");
             frame = 1;
             return;
         }
         frame ++;
-    }    
+        
     }
     }
     
