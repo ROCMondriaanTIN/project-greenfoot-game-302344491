@@ -639,7 +639,7 @@ tile=new Tile("stoneCliffRightAlt.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEI
 tile.isSolid = true;
 break;
 case 156:
-tile=new Tile("stoneHalf.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new MovingTile("stoneHalf.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 157:
@@ -687,16 +687,16 @@ tile=new Tile("stoneWall.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 168:
-tile=new Tile("tochLit.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile=new Lit("tochLit.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = false;
 break;
 case 169:
-tile=new Tile("tochLit2.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile=new Lit("tochLit2.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = false;
 break;
 case 170:
 tile=new Tile("torch.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 171:
 tile=new Tile("window.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);

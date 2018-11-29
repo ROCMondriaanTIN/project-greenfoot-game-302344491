@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Highjump extends Tile
 {
-    int frame=1;
+    int frame= 2;
     /**
      * Act - do whatever the Highjump wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,25 +24,19 @@ public class Highjump extends Tile
     
         if(frame == 1){
             setImage ("springboardDown.png");
+            
         }
-        if(frame == 2){
-            setImage ("springboardDown.png");
-        }
-        if(frame == 3){
-            setImage ("springboardDown.png");
-        }
-        if(frame == 4){
+        
+        else if(frame == 2){
             setImage ("springboardUp.png");
-        }
-        if(frame == 5){
-            setImage ("springboardUp.png");
-        }
-        else if(frame == 6){
-            setImage ("springboardUp.png");
+            
             frame = 1;
+            
             return;
         }
+        Greenfoot.delay(20);
         frame ++;
+        Greenfoot.delay(20);
         
     }
     }
