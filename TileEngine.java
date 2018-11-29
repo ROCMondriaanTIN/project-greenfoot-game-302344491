@@ -94,9 +94,11 @@ public class TileEngine {
      * Creates the tile world based on the TileFactory and the map icons.
      */
     public void generateWorld() {
+        int mapID = 0;
         for (int y = 0; y < MAP_HEIGHT; y++) {
             for (int x = 0; x < MAP_WIDTH; x++) {
                 // Nummer ophalen in de int array
+                mapID++;
                 int mapIcon = this.map[y][x];
                 if (mapIcon == -1) {
                     continue;
@@ -104,6 +106,9 @@ public class TileEngine {
                 // Als de mapIcon -1 is dan wordt de code hieronder overgeslagen
                 // Dus er wordt geen tile aangemaakt. -1 is dus geen tile;
                 Tile createdTile = this.tileFactory.createTile(mapIcon);
+
+                createdTile.setMapID(mapID);
+                createdTile.setMapIcon(mapIcon);
 
                 addTileAt(createdTile, x, y);
             }
@@ -128,6 +133,8 @@ public class TileEngine {
         // Toevoegen aan onze lokale array. Makkelijk om de tile op te halen
         // op basis van een x en y positie van de map
         this.generateMap[row][colom] = tile;
+        tile.setColom(colom);
+        tile.setRow(row);
     }
 
     /**
@@ -139,11 +146,10 @@ public class TileEngine {
      * find a tile.
      */
     public Tile getTileAt(int colom, int row) {
-        try {
-            return this.generateMap[row][colom];
-        } catch (Exception e) {
+        if (row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
             return null;
         }
+        return this.generateMap[row][colom];
     }
 
     /**
@@ -160,6 +166,55 @@ public class TileEngine {
 
         Tile tile = getTileAt(col, row);
         return tile;
+    }
+
+    /**
+     * Removes tile at the given colom and row
+     *
+     * @param colom
+     * @param row
+     * @return true if the tile has successfully been removed
+     */
+    public boolean removeTileAt(int colom, int row) {
+        if (row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
+            return false;
+        }
+        Tile tile = this.generateMap[row][colom];
+        if (tile != null) {
+            this.world.removeObject(tile);
+            this.generateMap[row][colom] = null;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Removes tile at the given x and y position
+     *
+     * @param x X-position in the world
+     * @param y Y-position in the world
+     * @return true if the tile has successfully been removed
+     */
+    public boolean removeTileAtXY(int x, int y) {
+        int col = getColumn(x);
+        int row = getRow(y);
+
+        return removeTileAt(col, row);
+    }
+
+    /**
+     * Removes the tile based on a tile
+     *
+     * @param tile Tile from the tilemap
+     * @return true if the tile has successfully been removed
+     */
+    public boolean removeTile(Tile tile) {
+        int colom = tile.getColom();
+        int row = tile.getRow();
+        if (colom != -1 && row != -1) {
+            return this.removeTileAt(colom, row);
+        }
+        return false;
     }
 
     /**
