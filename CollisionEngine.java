@@ -60,9 +60,9 @@ public class CollisionEngine {
             if (!tiles.isEmpty()) {
                 for (Tile tile : tiles) {
                     boolean resolved = resolve(mover, tile);
-//                    if(resolved) {
-//                        break;
-//                    }
+  //                    if(resolved) {
+  //                        break;
+  //                    }
                 }
             }
         }

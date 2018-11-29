@@ -70,6 +70,7 @@ public class Hero extends Mover {
             if (enemy != null) {
                 velocityY = -25;
                 setLocation(getX() + 0, getY());
+                setImage("p1_jump.png");
                 return;
             }
         }
@@ -90,21 +91,22 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("space")) {
-            for (Tile tile : getIntersectingObjects(Tile.class)) {
+        /*if (Greenfoot.isKeyDown("space")) {
+            for (JumpTile tile : getIntersectingObjects(JumpTile.class)) {
                 if (tile != null) {
                     inAir = false;
                     velocityY = -15;
+                    setImage("p1_jump.png");
                 } else {
                     inAir = true;
                 }
             }
-        }
+        }*/
 
-    /*    if (Greenfoot.isKeyDown("space")) {
+        if (Greenfoot.isKeyDown("space")) {
             velocityY = -12;
             setImage("p1_jump.png");
-        }*/
+        }
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
