@@ -113,5 +113,6 @@ public class MyWorld extends World {
         LetterA letterA = new LetterA();
         addObject(letterA,686,296);
         removeObject(enemy3);
+        resetButton.setLocation(289,63);
     }
 }

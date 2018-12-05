@@ -11,6 +11,8 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     private boolean inAir;
+    public static int coin;
+    public String verzamel = "";
     private int x = 185;
     private int y = 493;
 
@@ -81,6 +83,22 @@ public class Hero extends Mover {
                 return;
             }
         }
+    }
+    
+    public String addLetter(){
+        if(isTouching(LetterA.class)){
+            removeTouching(LetterA.class);
+            verzamel += "A";
+            getWorld().showText(verzamel, 100, 100);
+            coin ++;
+        }
+        if(isTouching(LetterB.class)){
+            removeTouching(LetterB.class);
+            verzamel += "B";
+            getWorld().showText(verzamel, 100, 100);
+            coin ++;
+        }
+        return verzamel;
     }
 
     public void checkpoint() {
