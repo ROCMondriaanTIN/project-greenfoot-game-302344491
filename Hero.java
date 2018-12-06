@@ -11,10 +11,9 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     private boolean inAir;
-    public static int coin;
-    public String verzamel = "";
     private int x = 185;
     private int y = 493;
+    Scorenbord scb;
 
     private GreenfootImage walk1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage walk2 = new GreenfootImage("p1_walk02.png");
@@ -85,20 +84,20 @@ public class Hero extends Mover {
         }
     }
     
-    public String addLetter(){
-        if(isTouching(LetterA.class)){
-            removeTouching(LetterA.class);
-            verzamel += "A";
-            getWorld().showText(verzamel, 100, 100);
-            coin ++;
+    public void act() {
+        if(activeWorld == ""){
+            String activeWorld = "MyWorld1";
         }
-        if(isTouching(LetterB.class)){
-            removeTouching(LetterB.class);
-            verzamel += "B";
-            getWorld().showText(verzamel, 100, 100);
-            coin ++;
+        openDoor();
+        handleInput();
+        addLetter();
+        velocityX *= drag;
+        velocityY += acc;
+
+        if(scb == null){
+            scb = new Scorenbord();
+            getWorld().addObject(scb, -10, -10);
         }
-        return verzamel;
     }
 
     public void checkpoint() {
