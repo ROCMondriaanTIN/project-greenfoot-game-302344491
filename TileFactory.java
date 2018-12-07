@@ -247,11 +247,11 @@ tile=new Tile("dirtRight.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 58:
-tile=new Tile("door_closedMid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new DoorTile("door_closedMid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 59:
-tile=new Tile("door_closedTop.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new DoorTile("door_closedTop.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 60:
@@ -524,7 +524,7 @@ tile.isSolid = true;
 break;
 case 127:
 tile=new Tile("signLeft.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 128:
 tile=new Tile("signRight.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
@@ -711,7 +711,7 @@ tile=new Highjump("springboardDown.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HE
 tile.isSolid = false;
 break;
 case 174:
-tile=new Highjump("springboardup.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new Highjump("springboardUp.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = false;
 break;
             default:

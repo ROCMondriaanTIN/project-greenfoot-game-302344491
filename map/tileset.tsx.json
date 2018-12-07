@@ -1,0 +1,1074 @@
+{ "columns":0,
+ "grid":
+    {
+     "height":1,
+     "orientation":"orthogonal",
+     "width":1
+    },
+ "margin":0,
+ "name":"tileset",
+ "spacing":0,
+ "tilecount":176,
+ "tiledversion":"1.2.0",
+ "tileheight":146,
+ "tiles":[
+        {
+         "id":0,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/box.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":1,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":2,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxCoin.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":3,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxCoin_disabled.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":4,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxCoinAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":5,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxCoinAlt_disabled.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":6,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxEmpty.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":7,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxExplosive.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":8,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxExplosive_disabled.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":9,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxExplosiveAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":10,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxItem.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":11,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxItem_disabled.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":12,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxItemAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":13,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxItemAlt_disabled.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":14,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/boxWarning.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":15,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/brickWall.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":16,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/bridge.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":17,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/bridgeLogs.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":18,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castle.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":19,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleCenter.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":20,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleCenter_rounded.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":21,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleCliffLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":22,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleCliffLeftAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":23,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleCliffRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":24,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleCliffRightAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":25,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHalf.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":26,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHalfLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":27,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHalfMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":28,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHalfRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":29,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHillLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":30,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHillLeft2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":31,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHillRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":32,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleHillRight2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":33,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleLedgeLeft.png",
+         "imageheight":22,
+         "imagewidth":5
+        }, 
+        {
+         "id":34,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleLedgeRight.png",
+         "imageheight":22,
+         "imagewidth":5
+        }, 
+        {
+         "id":35,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":36,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":37,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/castleRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":38,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":39,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtCenter.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":40,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtCenter_rounded.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":41,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtCliffLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":42,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtCliffLeftAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":43,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtCliffRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":44,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtCliffRightAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":45,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHalf.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":46,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHalfLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":47,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHalfMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":48,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHalfRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":49,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHillLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":50,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHillLeft2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":51,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHillRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":52,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtHillRight2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":53,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtLedgeLeft.png",
+         "imageheight":18,
+         "imagewidth":5
+        }, 
+        {
+         "id":54,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtLedgeRight.png",
+         "imageheight":18,
+         "imagewidth":5
+        }, 
+        {
+         "id":55,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":56,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":57,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/dirtRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":58,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/door_closedMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":59,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/door_closedTop.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":60,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/door_openMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":61,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/door_openTop.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":62,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/fence.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":63,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/fenceBroken.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":64,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grass.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":65,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCenter.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":66,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCenter_rounded.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":67,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCliffLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":68,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCliffLeftAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":69,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCliffRight - kopie.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":70,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCliffRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":71,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassCliffRightAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":72,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHalf.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":73,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHalfLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":74,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHalfMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":75,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHalfRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":76,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHillLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":77,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHillLeft2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":78,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHillRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":79,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassHillRight2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":80,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassLedgeLeft.png",
+         "imageheight":24,
+         "imagewidth":5
+        }, 
+        {
+         "id":81,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassLedgeRight.png",
+         "imageheight":24,
+         "imagewidth":5
+        }, 
+        {
+         "id":82,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":83,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":84,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/hill_large.png",
+         "imageheight":146,
+         "imagewidth":48
+        }, 
+        {
+         "id":85,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/hill_largeAlt.png",
+         "imageheight":146,
+         "imagewidth":48
+        }, 
+        {
+         "id":86,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/hill_small.png",
+         "imageheight":106,
+         "imagewidth":48
+        }, 
+        {
+         "id":87,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/hill_smallAlt.png",
+         "imageheight":106,
+         "imagewidth":48
+        }, 
+        {
+         "id":88,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/ladder_mid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":89,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/ladder_top.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":90,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidLava.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":91,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidLavaTop.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":92,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidLavaTop_mid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":93,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidWater.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":94,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidWaterTop.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":95,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidWaterTop_mid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":96,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/lock_blue.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":97,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/lock_green.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":98,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/lock_red.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":99,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/lock_yellow.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":100,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/rockHillLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":101,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/rockHillRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":102,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/ropeAttached.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":103,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/ropeHorizontal.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":104,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/ropeVertical.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":105,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sand.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":106,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandCenter.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":107,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandCenter_rounded.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":108,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandCliffLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":109,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandCliffLeftAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":110,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandCliffRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":111,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandCliffRightAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":112,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHalf.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":113,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHalfLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":114,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHalfMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":115,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHalfRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":116,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHillLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":117,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHillLeft2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":118,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHillRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":119,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandHillRight2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":120,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandLedgeLeft.png",
+         "imageheight":18,
+         "imagewidth":5
+        }, 
+        {
+         "id":121,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandLedgeRight.png",
+         "imageheight":18,
+         "imagewidth":5
+        }, 
+        {
+         "id":122,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":123,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":124,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sandRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":125,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/sign.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":126,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/signExit.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":127,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/signLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":128,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/signRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":129,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snow.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":130,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowCenter.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":131,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowCenter_rounded.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":132,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowCliffLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":133,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowCliffLeftAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":134,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowCliffRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":135,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowCliffRightAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":136,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHalf.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":137,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHalfLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":138,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHalfMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":139,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHalfRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":140,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHillLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":141,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHillLeft2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":142,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHillRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":143,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowHillRight2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":144,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowLedgeLeft.png",
+         "imageheight":18,
+         "imagewidth":5
+        }, 
+        {
+         "id":145,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowLedgeRight.png",
+         "imageheight":18,
+         "imagewidth":5
+        }, 
+        {
+         "id":146,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":147,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":148,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/snowRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":149,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stone.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":150,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneCenter.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":151,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneCenter_rounded.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":152,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneCliffLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":153,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneCliffLeftAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":154,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneCliffRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":155,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneCliffRightAlt.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":156,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneHalf.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":157,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneHalfLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":158,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneHalfMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":159,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneHalfRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":160,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneHillLeft2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":161,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneHillRight2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":162,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneLedgeLeft.png",
+         "imageheight":24,
+         "imagewidth":5
+        }, 
+        {
+         "id":163,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneLedgeRight.png",
+         "imageheight":24,
+         "imagewidth":5
+        }, 
+        {
+         "id":164,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneLeft.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":165,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":166,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneRight.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":167,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/stoneWall.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":168,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/tochLit.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":169,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/tochLit2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":170,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/torch.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":171,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/window.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":172,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/liquidLava2.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":173,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/springboardDown.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":174,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/springboardUp.png",
+         "imageheight":70,
+         "imagewidth":70
+        }, 
+        {
+         "id":175,
+         "image":"..\/greenfoot project\/project-greenfoot-game-302344491\/project-greenfoot-game-302344491\/images\/grassMid.png",
+         "imageheight":70,
+         "imagewidth":70
+        }],
+ "tilewidth":70,
+ "type":"tileset",
+ "version":1.2
+}

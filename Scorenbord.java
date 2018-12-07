@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Scorenbord extends Actor
 {
-
+    ArrayList<Letter>verzameldeLetters = new ArrayList<Letter>();
     public void voegLetterToe(char letter){
         //voegt een letter in de arraylist toe
         verzameldeLetters.add(new Letter(letter, true));

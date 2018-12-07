@@ -13,8 +13,10 @@ public class Hero extends Mover {
     private boolean inAir;
     private int x = 185;
     private int y = 493;
+    public String actieveWereld="";
     Scorenbord scb;
-
+    public String verzamel = "";
+    public String activeWorld = "";
     private GreenfootImage walk1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage walk2 = new GreenfootImage("p1_walk02.png");
     private GreenfootImage walk3 = new GreenfootImage("p1_walk03.png");
@@ -28,8 +30,9 @@ public class Hero extends Mover {
     private GreenfootImage walk11 = new GreenfootImage("p1_walk11.png");
     private int frame = 1;
 
-    public Hero() {
+    public Hero(String actieveWereld)  {
         super();
+        this.actieveWereld=actieveWereld;
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
@@ -39,6 +42,15 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
+        door();
+        if(scb == null){
+            scb = new Scorenbord();
+            getWorld().addObject(scb, -10, -10);
+        }
+        if(activeWorld == ""){
+            String activeWorld = "MyWorld";
+        }
+        addLetter();
         checkpoint();
         velocityX *= drag;
         velocityY += acc;
@@ -69,7 +81,7 @@ public class Hero extends Mover {
         }*/
         for (Actor enemy : getIntersectingObjects(Highjump.class)) {
             if (enemy != null) {
-                velocityY = -25;
+                velocityY = -30;
                 setLocation(getX() + 0, getY());
                 setImage("p1_jump.png");
                 return;
@@ -83,23 +95,48 @@ public class Hero extends Mover {
             }
         }
     }
-    
-    public void act() {
-        if(activeWorld == ""){
-            String activeWorld = "MyWorld1";
+    public void door()
+    {
+        if( actieveWereld=="Level1")
+        {
+            for(Tile door:getIntersectingObjects(DoorTile.class))
+            {
+                if(door!=null)
+                {
+                    //if(coin==20)
+                   // {
+                    Greenfoot.setWorld(new MyWorld());    
+                }
+                     //}
+            }
         }
-        openDoor();
-        handleInput();
-        addLetter();
-        velocityX *= drag;
-        velocityY += acc;
-
-        if(scb == null){
-            scb = new Scorenbord();
-            getWorld().addObject(scb, -10, -10);
+        if( actieveWereld=="MyWorld")
+        {
+            for(Tile door:getIntersectingObjects(DoorTile.class))
+            {
+                if(door!=null)
+                {
+                    //if(coin==20)
+                   // {
+                    Greenfoot.setWorld(new Level1());    
+                }
+                     //}
+            }
         }
+}
+    public String addLetter(){
+        for(Letter verzamelLetter : getIntersectingObjects(Letter.class)){
+            this.verzamel += verzamelLetter.letter;
+            getWorld().removeObject(verzamelLetter);
+            scb.voegLetterToe(verzamelLetter.letter);
+        }
+        return verzamel;
     }
-
+    public String getPositie()
+    {
+    String a="X:"+getX()+" Y:"+getY();    
+    return a;
+    }
     public void checkpoint() {
         if (isTouching(Checkpoint.class)) {
             x = getX();

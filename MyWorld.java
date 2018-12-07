@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World {
 
     private CollisionEngine ce;
-
+     private String actieveWereld="MyWorld";
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -52,7 +52,7 @@ public class MyWorld extends World {
 {150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,93,93,93,93,150,150,150,150,150,150,150},
 };
 
-        Hero hero = new Hero();
+        Hero hero = new Hero( actieveWereld);
         addObject(hero, 185, 493);
         
          MovingPlat MP = new MovingPlat();

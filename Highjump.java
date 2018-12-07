@@ -21,7 +21,8 @@ public class Highjump extends Tile
     public void act()
     {
     
-    
+    for(Actor hero:getIntersectingObjects(Hero.class))
+    {
         if(frame == 1){
             setImage ("springboardDown.png");
             
@@ -40,5 +41,6 @@ public class Highjump extends Tile
         
     }
     }
+}
     
 
