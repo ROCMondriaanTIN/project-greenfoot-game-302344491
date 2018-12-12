@@ -39,9 +39,9 @@ public class Letter extends Mover
     // LettersLatenZien();
     // }
 
-    // public void LettersLatenZien(){
-    // setImage("A.png");
+     public void LettersLatenZien(){
+         setImage("A.png");
 
-    // }
+    }
 
 }

@@ -74,6 +74,12 @@ public class MyWorld extends World {
         
         addObject(new Enemy(), 1170, 410);
         
+        addObject(new Letter('A'), 185, 600);
+        
+        addObject(new Letter('b'), 300, 600);
+        
+
+        
 
         // Force act zodat de camera op de juist plek staat.
         camera.act();

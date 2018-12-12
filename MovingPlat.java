@@ -13,7 +13,7 @@ public class MovingPlat extends Mover {
     public MovingPlat() {
         super();
         setImage("stoneHalf.png");
-        walkRange = 200;
+        walkRange = 400;
         firstAct = true;
         speed = 1;
     }

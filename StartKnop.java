@@ -20,7 +20,7 @@ public class StartKnop extends Actor
      public void click()
     {
         if(Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new Uitleg());
         }
     }
 }

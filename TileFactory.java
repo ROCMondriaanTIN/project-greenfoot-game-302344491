@@ -16,10 +16,10 @@ public class TileFactory {
         Tile tile;
         switch (mapIcon) {
             case 0:
-tile=new Tile("box.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new JumpTile("box.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 case 1:
-tile=new Tile("boxAlt.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new JumpTile("boxAlt.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 2:
@@ -367,12 +367,12 @@ tile=new Tile("hill_smallAlt.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 88:
-tile=new Tile("ladder_mid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile=new JumpTile("ladder_mid.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = false;
 break;
 case 89:
-tile=new Tile("ladder_top.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile=new JumpTile("ladder_top.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile.isSolid = false;
 break;
 case 90:
 tile=new Tile("liquidLava.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
@@ -423,15 +423,15 @@ tile=new Tile("rockHillRight.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 102:
-tile=new Tile("ropeAttached.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new JumpTile("ropeAttached.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = false;
 break;
 case 103:
-tile=new Tile("ropeHorizontal.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new JumpTile("ropeHorizontal.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 104:
-tile=new Tile("ropeVertical.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new JumpTile("ropeVertical.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = false;
 break;
 case 105:
@@ -520,7 +520,7 @@ tile.isSolid = false;
 break;
 case 126:
 tile=new Tile("signExit.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 127:
 tile=new Tile("signLeft.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
@@ -639,7 +639,7 @@ tile=new Tile("stoneCliffRightAlt.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEI
 tile.isSolid = true;
 break;
 case 156:
-tile=new MovingTile("stoneHalf.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
+tile=new Tile("stoneHalf.png",TileEngine.TILE_WIDTH,TileEngine.TILE_HEIGHT);
 tile.isSolid = true;
 break;
 case 157:

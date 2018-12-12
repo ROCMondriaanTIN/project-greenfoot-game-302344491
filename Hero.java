@@ -13,6 +13,7 @@ public class Hero extends Mover {
     private boolean inAir;
     private int x = 185;
     private int y = 493;
+    public static int coin;
     public String actieveWereld="";
     Scorenbord scb;
     public String verzamel = "";
@@ -81,7 +82,7 @@ public class Hero extends Mover {
         }*/
         for (Actor enemy : getIntersectingObjects(Highjump.class)) {
             if (enemy != null) {
-                velocityY = -30;
+                velocityY = -20;
                 setLocation(getX() + 0, getY());
                 setImage("p1_jump.png");
                 return;
@@ -97,18 +98,21 @@ public class Hero extends Mover {
     }
     public void door()
     {
-        if( actieveWereld=="Level1")
+        if( actieveWereld=="Uitleg")
         {
-            for(Tile door:getIntersectingObjects(DoorTile.class))
-            {
-                if(door!=null)
-                {
-                    //if(coin==20)
-                   // {
-                    Greenfoot.setWorld(new MyWorld());    
-                }
-                     //}
+            for (Actor door : getIntersectingObjects(DoorTile.class)) {
+            if (coin == 6){
+                Greenfoot.setWorld(new Level1());
             }
+         }
+        }if( actieveWereld=="level3")
+        {
+            for (Actor door : getIntersectingObjects(DoorTile.class)) {
+            if (coin == 1){
+                Greenfoot.setWorld(new MyWorld());
+                setLocation(452, 1633);
+            }
+         }
         }
         if( actieveWereld=="MyWorld")
         {
@@ -126,9 +130,22 @@ public class Hero extends Mover {
 }
     public String addLetter(){
         for(Letter verzamelLetter : getIntersectingObjects(Letter.class)){
-            this.verzamel += verzamelLetter.letter;
-            getWorld().removeObject(verzamelLetter);
-            scb.voegLetterToe(verzamelLetter.letter);
+            if(verzamelLetter != null) {
+                this.verzamel += verzamelLetter.letter;
+                // StringBuffer verzamelBuffer = new StringBuffer(verzamel);
+                // for(int i = 0; i < verzamelBuffer.capacity();i++) {
+
+                // }
+                // GreenfootImage verzamelImg = verzamelLetter.getImage();
+                // setImage(verzamel + ".png");
+                getWorld().removeObject(verzamelLetter);
+                scb.voegLetterToe(verzamelLetter.letter);
+
+                //ltr.hartjeLatenZien();
+                //getWorld().showText(verzamel, 100, 100);
+                coin ++;
+
+            }
         }
         return verzamel;
     }
@@ -145,7 +162,7 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        /*if (Greenfoot.isKeyDown("space")) {
+        if (Greenfoot.isKeyDown("space")) {
             for (JumpTile tile : getIntersectingObjects(JumpTile.class)) {
                 if (tile != null) {
                     inAir = false;
@@ -155,12 +172,12 @@ public class Hero extends Mover {
                     inAir = true;
                 }
             }
-        }*/
+        }
 
-        if (Greenfoot.isKeyDown("space")) {
+        /*if (Greenfoot.isKeyDown("space")) {
             velocityY = -12;
             setImage("p1_jump.png");
-        }
+        }*/
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
