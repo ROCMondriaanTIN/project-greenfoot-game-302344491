@@ -18,6 +18,7 @@ public class Hero extends Mover {
     Scorenbord scb;
     public String verzamel = "";
     public String activeWorld = "";
+    GreenfootSound Lettersound = new GreenfootSound("sounds/coin-drop-4.wav");
     private GreenfootImage walk1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage walk2 = new GreenfootImage("p1_walk02.png");
     private GreenfootImage walk3 = new GreenfootImage("p1_walk03.png");
@@ -132,19 +133,10 @@ public class Hero extends Mover {
         for(Letter verzamelLetter : getIntersectingObjects(Letter.class)){
             if(verzamelLetter != null) {
                 this.verzamel += verzamelLetter.letter;
-                // StringBuffer verzamelBuffer = new StringBuffer(verzamel);
-                // for(int i = 0; i < verzamelBuffer.capacity();i++) {
-
-                // }
-                // GreenfootImage verzamelImg = verzamelLetter.getImage();
-                // setImage(verzamel + ".png");
                 getWorld().removeObject(verzamelLetter);
                 scb.voegLetterToe(verzamelLetter.letter);
-
-                //ltr.hartjeLatenZien();
-                //getWorld().showText(verzamel, 100, 100);
                 coin ++;
-
+                Lettersound.play();
             }
         }
         return verzamel;

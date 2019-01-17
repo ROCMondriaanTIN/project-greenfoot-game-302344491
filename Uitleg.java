@@ -56,13 +56,13 @@ public class Uitleg extends World {
         
         
         
-        addObject(new Letter('U'), 300, 600);
+        addObject(new Letter('u'), 300, 600);
         
-        addObject(new Letter('I'), 400, 600);
+        addObject(new Letter('i'), 400, 600);
         addObject(new Letter('T'), 2949,853);
         addObject(new Letter('L'), 3110,853);
-        addObject(new Letter('E'), 3300,853);
-        addObject(new Letter('G'), 3500,853);
+        addObject(new Letter('e'), 3300,853);
+        addObject(new Letter('g'), 3500,853);
         
 
         

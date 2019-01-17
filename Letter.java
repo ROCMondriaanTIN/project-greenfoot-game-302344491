@@ -21,11 +21,7 @@ public class Letter extends Mover
         this.letter = letter;
         setImage(letter + ".png");
     }
-
-    // public Letter(char letter, String img){
-
-    // }
-
+    
     public void act()
     {
         if(!isOpscoreboard){
@@ -33,12 +29,8 @@ public class Letter extends Mover
         }else{
             
         }
-    } 
-
-    // public void letterEraf(){
-    // LettersLatenZien();
-    // }
-
+    }
+    
      public void LettersLatenZien(){
          setImage("A.png");
 
